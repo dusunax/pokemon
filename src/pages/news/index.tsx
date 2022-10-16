@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Link from "next/link";
 
 type NewsList = {
@@ -9,6 +10,10 @@ type NewsList = {
 function NewsPage({ newsList }) {
   return (
     <>
+      <Head>
+        <title>홈페이지</title>
+        <meta name="description" content="엄청난 서브 페이지" />
+      </Head>
       <h1>NewsPage</h1>
       <ul>
         {newsList.map((news) => (
