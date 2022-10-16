@@ -1,19 +1,16 @@
 import Head from "next/head";
 import Link from "next/link";
 
-type NewsList = {
-  id: string;
-  title: string;
-  desc: string;
-}[];
+import NewsList from "../../models/newsList";
 
-function NewsPage({ newsList }) {
+const NewsPage: React.FC<{ newsList: NewsList[] }> = ({ newsList }) => {
   return (
     <>
       <Head>
         <title>홈페이지</title>
         <meta name="description" content="엄청난 서브 페이지" />
       </Head>
+
       <h1>NewsPage</h1>
       <ul>
         {newsList.map((news) => (
@@ -24,10 +21,10 @@ function NewsPage({ newsList }) {
       </ul>
     </>
   );
-}
+};
 
 export async function getStaticProps() {
-  const newsList: NewsList = [
+  const newsList: NewsList[] = [
     { id: "n1", title: "news1", desc: "news desc1" },
     { id: "n2", title: "news2", desc: "news desc2" },
     { id: "n3", title: "news3", desc: "news desc3" },
