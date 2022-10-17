@@ -9,7 +9,7 @@ const ProfilePage: React.FC = () => {
         <meta name="description" content="프로트엔드 개발자가 자고 있습니다." />
       </Head>
 
-      <h1>Profile.</h1>
+      <h1 className="text-4xl my-5">Profile.</h1>
       <ProfileArticle />
     </>
   );

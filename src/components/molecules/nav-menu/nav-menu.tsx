@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const NavMenu = () => {
   return (
-    <ul>
+    <ul className="flex items-center gap-2">
       <li>
         <Link href="/">메인</Link>
       </li>

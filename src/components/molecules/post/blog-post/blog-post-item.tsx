@@ -12,14 +12,15 @@ const BlogPostItem: React.FC<{
 }> = (props) => {
   return (
     <li
+      className="py-6 border-b-2"
       onClick={() => {
         Router.push(`/blog/${props.id}`);
       }}
     >
-      <h3 className={classes.title}>{props.title}</h3>
       <article>
-        <p>{props.content}</p>
-        <p>{props.createdAt}</p>
+        <h3 className="text-2xl mb-2">{props.title}</h3>
+        <p className="text-base mb-1">{props.content}</p>
+        <p className="text-sm">{props.createdAt}</p>
       </article>
     </li>
   );

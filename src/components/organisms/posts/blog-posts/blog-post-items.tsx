@@ -9,7 +9,7 @@ const BlogPostItems: React.FC = () => {
   const posts = postsCtx.items;
 
   return (
-    <ul>
+    <ul className="flex flex-col">
       {posts?.map((post) => (
         <BlogPostItem
           key={post.id}

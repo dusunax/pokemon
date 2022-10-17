@@ -13,7 +13,7 @@ const BlogPage: React.FC = () => {
         />
       </Head>
 
-      <h1>Blog.</h1>
+      <h1 className="text-xl mb-0">Blog.</h1>
       <BlogPostItems />
     </>
   );

@@ -36,12 +36,16 @@ function DetailPost() {
       </Head>
 
       <h1>DetailPost.</h1>
+
       <article>
-        <p>{selectedPost?.title}</p>
-        <p>{selectedPost?.content}</p>
-        <p>{selectedPost?.createdAt}</p>
+        <h3 className="text-4xl mb-5">{selectedPost.title}</h3>
+        <p className="text-sm">{selectedPost.createdAt}</p>
+        <p className="text-xl py-10 pt-6 pb-30">{selectedPost.content}</p>
       </article>
-      <button onClick={() => router.back()}>뒤로 가기</button>
+
+      <button className="block mx-auto" onClick={() => router.back()}>
+        뒤로 가기
+      </button>
     </>
   );
 }
