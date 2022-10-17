@@ -1,15 +1,18 @@
 import type { AppProps } from "next/app";
+import PostsContextProvider from "../store/posts-context";
 
-import Layout from "../components/templates/layout/Layout";
+import Layout from "../components/templates/layout/layout";
 
 import "../styles/globals.css";
 
-function MyApp({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <PostsContextProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </PostsContextProvider>
   );
 }
 
-export default MyApp;
+export default App;

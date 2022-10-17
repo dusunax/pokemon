@@ -1,7 +1,7 @@
-import Header from "../../molecules/header/Header";
+import Header from "../../organisms/header/header";
 import React from "react";
 
-const Layout: React.FC<{ items: string[] }> = (props) => {
+const Layout: React.FC<{}> = (props) => {
   return (
     <>
       <Header />
