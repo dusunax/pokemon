@@ -4,9 +4,11 @@ import BlogPostItems from "../../components/organisms/posts/blog-posts/blog-post
 
 import { TOKEN, DATABASE_ID } from "../../config";
 
-const BlogPage: React.FC = () => {
-  console.log(TOKEN, DATABASE_ID);
+type Post = {
+  id: string;
+}[];
 
+const BlogPage: React.FC = (props) => {
   return (
     <>
       <Head>
@@ -18,7 +20,7 @@ const BlogPage: React.FC = () => {
       </Head>
 
       <h1 className="text-xl mb-0">Blog.</h1>
-      <BlogPostItems />
+      <BlogPostItems posts={props.posts} />
     </>
   );
 };
@@ -30,17 +32,23 @@ export async function getStaticProps() {
       accept: "application/json",
       "Notion-Version": "2022-06-28",
       "content-type": "application/json",
+      Authorization: `Bearer ${TOKEN}`,
     },
     body: JSON.stringify({ page_size: 100 }),
   };
 
-  fetch("https://api.notion.com/v1/databases/database_id/query", options)
-    .then((response) => response.json())
-    .then((response) => console.log(response))
-    .catch((err) => console.error(err));
+  const res = await (
+    await fetch(
+      `https://api.notion.com/v1/databases/${DATABASE_ID}/query`,
+      options
+    )
+  ).json();
+  const fetchResults: Post[] = res.results;
 
   return {
-    props: {},
+    props: {
+      posts: fetchResults,
+    },
   };
 }
 
