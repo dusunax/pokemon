@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 
 import Post from "../models/blog-post";
 
+import { TOKEN, DATABASE_ID } from "../config";
+
 type PostsContextObj = {
   items: Post[];
   addPost: (postPayload: Post) => void;
@@ -16,6 +18,7 @@ export const PostsContext = React.createContext<PostsContextObj>({
 
 const PostsContextProvider: React.FC = (props) => {
   const [posts, setPosts] = useState<Post[]>([]);
+  console.log(props);
 
   // api여기서
   const temp = [
@@ -36,10 +39,9 @@ const PostsContextProvider: React.FC = (props) => {
   useEffect(() => {
     setPosts(temp);
   }, []);
-  //
 
   const addPostHandler = (postPayload: Post) => {
-    const { title, content } = postPayload;
+    const { id, title, content, createdAt } = postPayload;
     const newPost = new Post(title, content);
 
     setPosts((prevPosts) => {

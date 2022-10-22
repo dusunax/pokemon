@@ -4,10 +4,6 @@ import BlogPostItems from "../../components/organisms/posts/blog-posts/blog-post
 
 import { TOKEN, DATABASE_ID } from "../../config";
 
-type Post = {
-  id: string;
-}[];
-
 const BlogPage: React.FC = (props) => {
   return (
     <>
@@ -20,7 +16,7 @@ const BlogPage: React.FC = (props) => {
       </Head>
 
       <h1 className="text-xl mb-0">Blog.</h1>
-      <BlogPostItems posts={props.posts} />
+      <BlogPostItems posts={props.posts} limit={0} />
     </>
   );
 };
@@ -43,7 +39,7 @@ export async function getStaticProps() {
       options
     )
   ).json();
-  const fetchResults: Post[] = res.results;
+  const fetchResults = res.results;
 
   return {
     props: {
