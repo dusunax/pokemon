@@ -11,7 +11,7 @@ export default function Home() {
         <title>홈</title>
       </Head>
       <main style={{ height: "100vh", textAlign: "center" }}>
-        <h1>hello world</h1>
+        <h1>hello world!</h1>
       </main>
     </>
   );
