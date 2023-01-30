@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  NODE_VERSION: 18
+  NODE_VERSION: 16.13.0
 
 jobs:
   deploy:
@@ -14,14 +14,14 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [$NODE_VERSION]
+        node-version: $NODE_VERSION
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Setup Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: $NODE_VERSION
 
@@ -38,13 +38,6 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
       - name: Deploy to AWS CloudFront
-        uses: aws-actions/upload-directory@v1
-        with:
-          directory: .next
-          region: ap-northeast-2
-          distribution-id: ${{ secrets.AWS_DISTRIBUTION_ID }}
-          wait-for-deployment: true
-
-      - name: Invalidate CloudFront cache
         run: |
-          aws cloudfront create-invalidation --distribution-id  ${{ secrets.AWS_DISTRIBUTION_ID }} --paths "/*"
+          aws s3 sync .next s3://${AWS_S3_BUCKET_NAME}/ --delete
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_DISTRIBUTION_ID }} --paths "/*"
