@@ -33,5 +33,5 @@ jobs:
 
       - name: Deploy to AWS CloudFront
         run: |
-          aws s3 sync .next s3://${AWS_S3_BUCKET_NAME}/ --delete
+          aws s3 sync .next s3://${{ secrets.AWS_S3_BUCKET_NAME }}/ --delete
           aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_DISTRIBUTION_ID }} --paths "/*"
