@@ -44,3 +44,7 @@ jobs:
         region: us-west-2
         distribution-id: YOUR_DISTRIBUTION_ID
         wait-for-deployment: true
+        
+    - name: Invalidate CloudFront cache
+      run: |
+        aws cloudfront create-invalidation --distribution-id  ${{ secrets.AWS_DISTRIBUTION_ID }} --paths "/*"
