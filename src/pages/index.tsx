@@ -10,7 +10,7 @@ export default function Home() {
       </Head>
       <main>
         <Main />
-        <Link href="/poketmon">나 링크</Link>
+        <Link href="/pokemon">나 링크</Link>
       </main>
     </>
   );

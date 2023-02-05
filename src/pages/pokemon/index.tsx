@@ -1,19 +1,19 @@
 import Head from "next/head";
 
-import PoketmonList from "@/components/poketmon/poketmon-list/PoketmonList";
-import PoketmonNew from "@/components/poketmon/poketmon-new/PoketmonNew";
+import PokemonList from "@/components/pokemon/pokemon-list/PokemonList";
+import PokemonNew from "@/components/pokemon/pokemon-new/PokemonNew";
 import Timer from "@/components/timer/Timer";
 import Link from "next/link";
 
-export default function PoketmonPage() {
+export default function PokemonPage() {
   return (
     <>
       <Head>
         <title>포켓몬</title>
       </Head>
       <main>
-        <PoketmonNew />
-        <PoketmonList />
+        <PokemonNew />
+        <PokemonList />
         <Timer />
         <Link href={`/`}>로그아웃</Link>
       </main>

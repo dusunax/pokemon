@@ -1,4 +1,4 @@
 export const queryKeys = {
-  poketmon: "poketmon",
-  poketmonList: "poketmonList",
+  pokemon: "pokemon",
+  pokemonList: "pokemonList",
 };
