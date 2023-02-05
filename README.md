@@ -10,9 +10,11 @@
 - [x] 3S endpoint에 접근 가능한가?
 - [x] 클라우드프론트 deploy 되었는가? & endpoint에 접근 가능한가?
 - [x] Create records in Route 53 ⇒ DNS 레코드 생성
-- [ ] 인증서 검증 완료 후 cloudfront에서 Custom SSL certificate 선택하기
-- [ ] IAM 만들기
-- [ ] Github Action 설정
+- [x] 인증서 검증 완료 후 cloudfront에서 Custom SSL certificate 선택하기
+- [x] IAM 만들기
+- [x] Github Action 설정
+
+### route53 인증 실패로 외부 도메인 연결함. 다시 작업 필요!
 
 ---
 
