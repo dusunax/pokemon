@@ -1,17 +1,20 @@
 import { axiosInstance } from "./client";
+import { apiBaseDataUrl, apiBaseImgUrl, baseURL } from "./constants";
 
-export const getPokemonInfo = () => {
-  return axiosInstance.get(`/`);
+import { pokemonDTO } from "@/models/pokemon";
+
+export const getPokemonInfo = (idNo: number) => {
+  return axiosInstance.get(`${apiBaseDataUrl}/${idNo}`);
 };
 
-export const getPokemonImage = () => {
-  return axiosInstance.get(`/`);
+export const getPokemonImage = (idNo: number) => {
+  return axiosInstance.get(`${apiBaseImgUrl}/${idNo}.png`);
 };
 
-export const savePokemonDB = () => {
-  return axiosInstance.post(`/`, {});
+export const savePokemonDB = (payload: pokemonDTO) => {
+  return axiosInstance.post(`${baseURL}`, payload);
 };
 
 export const fetchPokemonDB = () => {
-  return axiosInstance.post(`/`, {});
+  return axiosInstance.get(`${baseURL}`);
 };
