@@ -1,17 +1,21 @@
 import Head from "next/head";
+
+import PoketmonList from "@/components/poketmon/poketmon-list/PoketmonList";
+import PoketmonNew from "@/components/poketmon/poketmon-new/PoketmonNew";
+import Timer from "@/components/timer/Timer";
 import Link from "next/link";
 
 export default function PoketmonPage() {
-  const id = 1;
-
   return (
     <>
       <Head>
         <title>포켓몬</title>
       </Head>
       <main>
-        <h1>hello world!</h1>
-        <Link href={`/poketmon/${id}`}>하하</Link>
+        <PoketmonNew />
+        <PoketmonList />
+        <Timer />
+        <Link href={`/`}>로그아웃</Link>
       </main>
     </>
   );

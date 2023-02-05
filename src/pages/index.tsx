@@ -1,3 +1,4 @@
+import Main from "@/components/main/Main";
 import Head from "next/head";
 import Link from "next/link";
 
@@ -8,8 +9,8 @@ export default function Home() {
         <title>홈</title>
       </Head>
       <main>
-        <h1>스티커 뽑기</h1>
-        <Link href="/poketmon">바로가기</Link>
+        <Main />
+        <Link href="/poketmon">나 링크</Link>
       </main>
     </>
   );
