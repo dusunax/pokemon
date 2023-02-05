@@ -1,14 +1,12 @@
 {
-  "name": "cicd",
+  "name": "pokemon",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "npx next dev -p 3030",
     "lint": "next lint",
-    "start": "concurrently \"npm run start:css\" \"next start\"",
-    "start:css": "tailwindcss -o src/styles/tailwind.css --watch",
-    "build": "next build",
-    "build:css": "tailwindcss -o src/styles/tailwind.css -m"
+    "start": "next start",
+    "build": "next build"
   },
   "dependencies": {
     "@next/font": "13.1.6",
