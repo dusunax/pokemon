@@ -6,7 +6,7 @@ export default function PokemonList() {
 
   return (
     <div>
-      <h1 className="text-xl font-bold">PokemonList</h1>
+      <h1 className="mb-4 text-4xl font-bold text-center">PokemonList</h1>
       <p>로그인 하지 않았을 때: 로그인 버튼</p>
       <p>로그인 했을 때: 목록</p>
       <ul>

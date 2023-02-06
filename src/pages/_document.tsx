@@ -9,8 +9,9 @@ export default function Document() {
         <DefaultLayout>
           <Main />
         </DefaultLayout>
+
+        <NextScript />
       </body>
-      <NextScript />
     </Html>
   );
 }

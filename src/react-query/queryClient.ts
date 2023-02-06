@@ -4,6 +4,8 @@ function queryErrorHandler(error: unknown): void {
   const title =
     error instanceof Error ? error.message : "error connecting to server";
 
+  console.log(error);
+
   // 여기에 에러 토스트 메시지 작성
   // (예시)
   // toast.closeAll();
