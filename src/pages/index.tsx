@@ -1,6 +1,5 @@
 import Main from "@/components/main/Main";
 import Head from "next/head";
-import Link from "next/link";
 
 export default function Home() {
   return (
@@ -10,7 +9,6 @@ export default function Home() {
       </Head>
       <main>
         <Main />
-        <Link href="/pokemon">나 링크</Link>
       </main>
     </>
   );

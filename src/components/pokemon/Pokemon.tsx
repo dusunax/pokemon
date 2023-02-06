@@ -9,5 +9,9 @@ export default function Pokemon() {
     console.log(getPokemonQuery(1));
   }, [getPokemonQuery]);
 
-  return <div className="text-xl font-bold">Pokemon</div>;
+  return (
+    <div className="text-center">
+      <h1 className="mb-4 text-4xl font-bold">Pokemon</h1>
+    </div>
+  );
 }

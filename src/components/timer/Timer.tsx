@@ -1,3 +1,7 @@
 export default function Timer() {
-  return <div className="text-xl font-bold">Timer</div>;
+  return (
+    <div>
+      <h1 className="mb-4 text-4xl font-bold text-center">Timer</h1>
+    </div>
+  );
 }

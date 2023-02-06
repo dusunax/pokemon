@@ -4,7 +4,10 @@ module.exports = {
   theme: {
     extend: {
       maxHeight: {
-        custom: "50rem",
+        common: "50rem",
+      },
+      margin: {
+        common: "8rem 0 0 0",
       },
     },
   },
