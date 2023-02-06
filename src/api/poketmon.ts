@@ -4,11 +4,11 @@ import { apiBaseDataUrl, apiBaseImgUrl, baseURL } from "./constants";
 import { pokemonDTO } from "@/models/pokemon";
 
 export const getPokemonInfo = (idNo: number) => {
-  return axiosInstance.get(`${apiBaseDataUrl}/${idNo}`);
+  return axiosInstance.get(`${apiBaseDataUrl}${idNo}`);
 };
 
 export const getPokemonImage = (idNo: number) => {
-  return axiosInstance.get(`${apiBaseImgUrl}/${idNo}.png`);
+  return axiosInstance.get(`${apiBaseImgUrl}${idNo}.png`);
 };
 
 export const savePokemonDB = (payload: pokemonDTO) => {
