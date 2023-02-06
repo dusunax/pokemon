@@ -8,6 +8,9 @@ const nextConfig = {
   generateBuildId: async () => {
     return `${Date.now()}`;
   },
+  images: {
+    domains: ["raw.githubusercontent.com"],
+  },
 };
 
 module.exports = nextConfig;

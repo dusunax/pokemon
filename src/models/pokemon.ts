@@ -1,13 +1,13 @@
-export interface pokemonNames {
+export interface PokemonNames {
   ko: string;
   en: string;
   jp: string;
   cn: string;
   fr: string;
 }
-export interface pokemonDTO {
+export interface PokemonDTO {
   no: number;
-  names: pokemonNames;
+  names: PokemonNames;
   imgUrl: string;
   catched_at: string;
 }
