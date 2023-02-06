@@ -1,12 +1,12 @@
 import "tailwindcss/tailwind.css";
 import "@/styles/index.css";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import type { AppProps } from "next/app";
 
 import { ReactQueryDevtools } from "react-query/devtools";
-import { Hydrate, QueryClient, QueryClientProvider } from "react-query";
+import { Hydrate, QueryClientProvider } from "react-query";
 import { queryClient } from "@/react-query/queryClient";
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -16,6 +16,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <Hydrate state={pageProps.dehydratedState}>
           <Component {...pageProps} />
         </Hydrate>
+        <ReactQueryDevtools />
       </QueryClientProvider>
     </>
   );
