@@ -1,8 +1,8 @@
 import "tailwindcss/tailwind.css";
 import "@/styles/index.css";
+import firebase from "@/common/firebase";
 
 import React from "react";
-
 import type { AppProps } from "next/app";
 
 import { ReactQueryDevtools } from "react-query/devtools";

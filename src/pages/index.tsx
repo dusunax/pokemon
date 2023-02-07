@@ -9,6 +9,7 @@ export default function Home() {
       </Head>
       <main>
         <Main />
+        <>&copy; {new Date().getFullYear()}</>
       </main>
     </>
   );

@@ -4,7 +4,7 @@ import PokemonNew from "./pokemon-new/PokemonNew";
 import PokemonList from "./pokemon-list/PokemonList";
 import Timer from "../timer/Timer";
 
-export default function Pokemon() {
+export default function PokemonContents() {
   return (
     <div className="text-center">
       <div className="flex flex-col gap-4 m-common">

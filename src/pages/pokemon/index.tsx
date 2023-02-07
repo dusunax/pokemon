@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Pokemon from "@/components/pokemon/Pokemon";
+import PokemonContents from "@/components/pokemon/PokemonContents";
 
 export default function PokemonPage() {
   return (
@@ -8,7 +8,7 @@ export default function PokemonPage() {
         <title>포켓몬</title>
       </Head>
       <main>
-        <Pokemon />
+        <PokemonContents />
       </main>
     </>
   );

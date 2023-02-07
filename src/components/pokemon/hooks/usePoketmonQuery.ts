@@ -53,7 +53,7 @@ interface UsePoketmon {
 /** hook 시작 */
 export default function usePoketmonQuery(): UsePoketmon {
   const [idNo, setIdNo] = useState({
-    curr: 0,
+    curr: 1,
     next: getId(),
   });
 
@@ -73,10 +73,13 @@ export default function usePoketmonQuery(): UsePoketmon {
   }, [queryClient, idNo]);
 
   const fallback = initPokemon();
-  const { data: newPokemon = fallback, error } = useQuery(
+  const { data: newPokemon = fallback } = useQuery(
     [queryKeys.pokemon, idNo.curr],
     () => {
-      return getPokemonQuery(idNo.curr).catch(() => fallback);
+      return getPokemonQuery(idNo.curr);
+    },
+    {
+      retry: 2,
     }
   );
 

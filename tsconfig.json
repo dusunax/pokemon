@@ -23,7 +23,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "src/react-query/constants.js"
+    "src/react-query/constants.js",
+    "src/common/firebaseInstance.js"
   ],
   "exclude": ["node_modules"]
 }
