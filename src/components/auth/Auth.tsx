@@ -37,11 +37,14 @@ export default function Auth() {
 
   return (
     <div>
-      <div className="text-center mb-20 ">
+      <div className="text-center pb-4 mb-4 border-2 border-cyan-300">
         <h1 className="m-common mb-4 text-4xl font-bold">
-          {newAccount ? "Register" : "Login"}
+          {newAccount ? "회원가입" : "로그인"}
         </h1>
-        <button className="block border-2 mx-auto" onClick={toggleAccount}>
+        <button
+          className="block border-2 px-4 mx-auto border-cyan-900  text-xs"
+          onClick={toggleAccount}
+        >
           {!newAccount ? "회원가입" : "로그인"}
         </button>
       </div>
@@ -67,7 +70,7 @@ export default function Auth() {
         <input
           className="my-6 px-4 py-2 bg-slate-500 text-cyan-50 text-center"
           type="submit"
-          value={newAccount ? "아이디 만들기" : "로그인 하기"}
+          value={newAccount ? "이메일로 가입" : "이메일로 로그인"}
         />
       </form>
       <div className="flex justify-center gap-6">
