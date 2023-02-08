@@ -1,10 +1,15 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 import PokemonNew from "./pokemon-new/PokemonNew";
 import PokemonList from "./pokemon-list/PokemonList";
 import Timer from "../timer/Timer";
 
+import { authService } from "@/common/fbase";
+
 export default function PokemonContents() {
+  const router = useRouter();
+
   return (
     <div className="text-center">
       <div className="flex flex-col gap-4 m-common">
@@ -13,7 +18,14 @@ export default function PokemonContents() {
         <PokemonNew />
         <PokemonList />
         <Timer />
-        <Link href={`/`}>로그아웃</Link>
+        <div
+          onClick={() => {
+            authService.signOut();
+            router.push("/");
+          }}
+        >
+          로그아웃
+        </div>
       </div>
     </div>
   );
