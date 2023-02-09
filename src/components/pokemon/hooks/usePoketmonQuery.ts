@@ -8,11 +8,12 @@ import {
 } from "../utils/mappingPokemonName";
 
 import { queryKeys } from "../../../react-query/constants";
-import { getPokemonImage, getPokemonInfo } from "@/api/poketmon";
+import { getPokemonImage, getPokemonInfo, savePokemonDB } from "@/api/poketmon";
 
 import { getId } from "@/utils/getId";
 import { checkStatus200 } from "@/utils/checkStatus200";
 import { idNoDTO, initPokemon } from "./pokemon";
+import { dbService } from "@/common/fbase";
 
 /** api에 get요청을 보내고, pokemonDTO 타입에 맞는 값을 리턴합니다. */
 async function getPokemonQuery(no: number): Promise<PokemonDTO> {
@@ -38,6 +39,15 @@ async function getPokemonQuery(no: number): Promise<PokemonDTO> {
     imgUrl,
     catched_at: "2023-01-01",
   };
+
+  dbService.collection("pokemonDB").add(pokemonData);
+  console.log(pokemonData);
+  // try {
+  //   const data = savePokemonDB(pokemonData);
+  //   console.log(data);
+  // } catch (err) {
+  //   console.log(err);
+  // }
 
   return pokemonData;
 }

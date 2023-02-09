@@ -20,7 +20,9 @@ export default function Home({ isLoggedIn }: { isLoggedIn: boolean }) {
           </>
         )}
 
-        <>&copy; {new Date().getFullYear()}</>
+        <div className="text-center mt-auto">
+          &copy; {new Date().getFullYear()}
+        </div>
       </main>
     </>
   );
