@@ -1,5 +1,5 @@
-import { authService } from "@/common/fbase";
-import { ChangeEvent, FormEvent, useState } from "react";
+import { authService, firebaseInstance } from "@/common/fbase";
+import { ChangeEvent, FormEvent, MouseEvent, useState } from "react";
 
 export default function Auth() {
   const [email, setEmail] = useState("");
@@ -33,7 +33,30 @@ export default function Auth() {
     }
   };
 
+  /** 로그인 & 회원가입 전환 */
   const toggleAccount = () => setNewAccount((prev) => !prev);
+
+  /** 소셜 로그인 클릭 */
+  const onSocialClick = async (
+    e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>
+  ) => {
+    const target = e.target as HTMLButtonElement;
+    const { name } = target;
+
+    let provider;
+
+    if (name === "google") {
+      provider = new firebaseInstance.auth.GoogleAuthProvider();
+    }
+
+    if (name === "github")
+      provider = new firebaseInstance.auth.GithubAuthProvider();
+
+    if (!provider) return;
+
+    const data = await authService.signInWithPopup(provider);
+    console.log(data);
+  };
 
   return (
     <div>
@@ -74,8 +97,20 @@ export default function Auth() {
         />
       </form>
       <div className="flex justify-center gap-6">
-        <button className="my-6 px-4 bg-slate-500 text-cyan-50">구글</button>
-        <button className="my-6 px-4 bg-slate-500 text-cyan-50">깃헙</button>
+        <button
+          className="my-6 px-4 bg-slate-500 text-cyan-50"
+          name="google"
+          onClick={onSocialClick}
+        >
+          구글
+        </button>
+        <button
+          className="my-6 px-4 bg-slate-500 text-cyan-50"
+          name="github"
+          onClick={onSocialClick}
+        >
+          깃헙
+        </button>
       </div>
       <p className="h-20">{error}</p>
     </div>

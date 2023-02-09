@@ -19,4 +19,5 @@ if (!firebase.apps.length) {
   // getAnalytics(app);
 }
 
+export const firebaseInstance = firebase;
 export const authService = firebase.auth();
