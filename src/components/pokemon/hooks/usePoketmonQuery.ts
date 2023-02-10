@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useQuery, useQueryClient } from "react-query";
+import { useMutation, useQuery, useQueryClient } from "react-query";
 
 import { PokemonDTO } from "@/models/pokemon";
 import {
@@ -40,15 +40,6 @@ async function getPokemonQuery(no: number): Promise<PokemonDTO> {
     catched_at: "2023-01-01",
   };
 
-  dbService.collection("pokemonDB").add(pokemonData);
-  console.log(pokemonData);
-  // try {
-  //   const data = savePokemonDB(pokemonData);
-  //   console.log(data);
-  // } catch (err) {
-  //   console.log(err);
-  // }
-
   return pokemonData;
 }
 
@@ -63,14 +54,15 @@ interface UsePoketmon {
 /** hook 시작 */
 export default function usePoketmonQuery(): UsePoketmon {
   const [idNo, setIdNo] = useState({
-    curr: 1,
+    curr: 0,
     next: getId(),
   });
 
-  // const deletePokemon = () => {};
-
   function updateIdNo(): void {
     setIdNo({ curr: idNo.next, next: getId() });
+    queryClient.clear();
+    // console.log(newPokemon);
+    dbService.collection("pokemonDB").add(newPokemon);
   }
 
   const queryClient = useQueryClient();
@@ -78,20 +70,28 @@ export default function usePoketmonQuery(): UsePoketmon {
   // useEffect
   useEffect(() => {
     queryClient.prefetchQuery([queryKeys.pokemon, idNo.next], () => {
-      getPokemonQuery(idNo.next);
+      idNo.curr > 0 && getPokemonQuery(idNo.next);
     });
   }, [queryClient, idNo]);
 
   const fallback = initPokemon();
-  const { data: newPokemon = fallback } = useQuery(
+  const { data: newPokemon = fallback, remove } = useQuery(
     [queryKeys.pokemon, idNo.curr],
     () => {
+      if (idNo.curr === 0) return fallback;
+
       return getPokemonQuery(idNo.curr);
     },
     {
       retry: 2,
     }
   );
+
+  // useMutaion 내용
+  // const { mutate, isLoading, isError, error, isSuccess } = useMutation([
+  //   queryKeys.pokemon,
+  //   idNo.curr,
+  // ]);
 
   return { getPokemonQuery, updateIdNo, newPokemon, idNo };
 }
