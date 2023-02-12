@@ -12,10 +12,16 @@ export const getPokemonImage = (idNo: number) => {
   return axiosInstance.get(`${apiBaseImgUrl}${idNo}.png`);
 };
 
-export const savePokemonDB = (payload: PokemonDTO) => {
-  return dbService.collection("pokemonDB").add(payload);
+export const savePokemonDB = async (payload: PokemonDTO | undefined) => {
+  if (!payload) return;
+
+  try {
+    const result = await dbService.collection("pokemonDB").add(payload);
+  } catch (err) {
+    throw new Error("포켓몬 저장 실패");
+  }
 };
 
 export const fetchPokemonDB = () => {
-  return axiosInstance.get(`${baseURL}`);
+  return dbService.collection("pokemonDB").get();
 };
