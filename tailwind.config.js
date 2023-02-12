@@ -7,7 +7,10 @@ module.exports = {
         common: "50rem",
       },
       margin: {
-        common: "8rem 0 0 0",
+        common: "4rem 0 0 0",
+      },
+      fontSize: {
+        xxs: "10px",
       },
     },
   },
