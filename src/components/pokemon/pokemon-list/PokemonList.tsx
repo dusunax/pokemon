@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { UsePoketmonQuery } from "../hooks/usePokemonQuery";
 import Pokemon from "../pokemon/Pokemon";
 
