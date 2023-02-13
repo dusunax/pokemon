@@ -12,6 +12,10 @@ module.exports = {
       fontSize: {
         xxs: "10px",
       },
+      screens: {
+        xs: "500px",
+        xxs: "360px",
+      },
     },
   },
   variants: {
