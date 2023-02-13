@@ -24,6 +24,7 @@ export default function App({ Component, pageProps }: AppProps) {
         sessionStorage.setItem("user", user.uid);
       } else {
         setIsLoggedIn(false);
+        sessionStorage.removeItem("user");
       }
       setInit(true);
     });
