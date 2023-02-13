@@ -12,7 +12,7 @@ import {
   fetchPokemonDB,
   getPokemonImage,
   getPokemonInfo,
-  savePokemonDB,
+  savePokemonToDB,
 } from "@/api/pokemonAPI";
 
 import { getId } from "@/utils/getId";
@@ -89,7 +89,8 @@ export default function usePoketmonQuery(): UsePoketmonQuery {
   async function updateIdNo() {
     setIdNo({ curr: idNo.next, next: getId() });
 
-    savePokemonDB(newPokemon);
+    queryClient.clear();
+    savePokemonToDB(newPokemon);
   }
 
   // useQuery 시작

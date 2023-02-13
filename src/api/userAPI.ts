@@ -17,18 +17,13 @@ const saveUserData = async (user: userObjDTO) => {
   };
 
   try {
-    const findById = db.where("userId", "==", uid);
-    const isExist = (await findById.get()).docs;
+    const userRef = db.where("userId", "==", uid);
 
-    if (isExist.length > 0) {
-      console.log(findById);
-    } else {
-      db.add(initObj);
-    }
+    if ((await userRef.get()).empty) db.add(initObj);
   } catch (err) {
     console.log(err);
 
-    throw new Error("실패");
+    throw new Error("사용자 DB 저장에 실패");
   }
 };
 export { saveUserData };

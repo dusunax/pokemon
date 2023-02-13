@@ -15,8 +15,6 @@ export default function PokemonContents() {
   window.localStorage.setItem("user", "0");
   // localStorage.removeItem("user");
 
-  console.log("hi");
-
   return (
     <div className="text-center">
       <div className="flex flex-col gap-4 m-common">

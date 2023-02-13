@@ -18,9 +18,12 @@ export default function PokemonNew({
         <Pokemon pokemon={currPokemon} />
       </div>
 
-      <section className="random-pokemon  relative -mt-2 hover:scale-125 transition-all  active:scale-50">
-        <button onClick={updateIdNo}>
-          <Image width={40} src={pokeball} alt="" />
+      <section>
+        <button
+          onClick={updateIdNo}
+          className="random-pokemon relative -mt-2 hover:scale-125 transition-all active:scale-50"
+        >
+          <Image width={40} src={pokeball} alt="몬스터볼" />
         </button>
       </section>
     </div>

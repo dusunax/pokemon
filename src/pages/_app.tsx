@@ -10,20 +10,18 @@ import { ReactQueryDevtools } from "react-query/devtools";
 import { Hydrate, QueryClientProvider } from "react-query";
 import { queryClient } from "@/react-query/queryClient";
 
-import { userObjDTO } from "@/models/user";
 import { saveUserData } from "@/api/userAPI";
 
 export default function App({ Component, pageProps }: AppProps) {
   const [init, setInit] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [userObj, setUserObj] = useState<userObjDTO>();
 
   useEffect(() => {
     authService.onAuthStateChanged((user) => {
       if (user) {
         setIsLoggedIn(true);
-        setUserObj(user);
         saveUserData(user);
+        sessionStorage.setItem("user", user.uid);
       } else {
         setIsLoggedIn(false);
       }
@@ -35,7 +33,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <QueryClientProvider client={queryClient}>
         {init ? (
-          <Component {...pageProps} isLoggedIn={isLoggedIn} userObj={userObj} />
+          <Component {...pageProps} isLoggedIn={isLoggedIn} />
         ) : (
           "초기화 중"
         )}
