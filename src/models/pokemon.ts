@@ -1,3 +1,5 @@
+import firebase from "firebase/compat/app";
+
 export interface PokemonNames {
   ko: string;
   en: string;
@@ -9,7 +11,7 @@ export interface PokemonDTO {
   no: number;
   names: PokemonNames;
   imgUrl: string;
-  catched_at: string;
+  catched_at: firebase.firestore.Timestamp;
 }
 
 export interface FBPokemonDTO extends PokemonDTO {
@@ -33,7 +35,7 @@ export function initPokemon() {
     },
     imgUrl:
       "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/0.png",
-    catched_at: "2023-01-01",
+    catched_at: firebase.firestore.Timestamp.fromDate(new Date()),
   };
   return initData;
 }

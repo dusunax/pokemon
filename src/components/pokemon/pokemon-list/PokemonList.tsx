@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { UsePoketmonQuery } from "../hooks/usePokemonQuery";
 import Pokemon from "../pokemon/Pokemon";
 
@@ -7,16 +6,16 @@ export default function PokemonList({
 }: {
   pokemonQuery: UsePoketmonQuery;
 }) {
-  const { pokemonList, idNo, updateIdNo } = pokemonQuery;
+  const { pokemonList } = pokemonQuery;
 
   if (pokemonList.length === 0) return <></>;
 
   return (
     <div>
       <h1 className="mb-4 text-4xl font-bold text-center">PokemonList</h1>
-      <ul className="grid grid-cols-3">
+      <ul className="grid grid-cols-2 xxs:grid-cols-3 xs:grid-cols-5 md:grid-cols-3">
         {pokemonList.map((item) => (
-          <li key={item.id} className="text-xxs">
+          <li key={item.no} className="text-xxs">
             <Pokemon pokemon={item} />
           </li>
         ))}

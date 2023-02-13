@@ -1,5 +1,7 @@
+import firebase from "firebase/compat/app";
+
 import { useEffect, useState } from "react";
-import { useMutation, useQuery, useQueryClient } from "react-query";
+import { useQuery, useQueryClient } from "react-query";
 
 import { FBPokemonDTO, PokemonDTO } from "@/models/pokemon";
 import {
@@ -12,12 +14,13 @@ import {
   fetchPokemonDB,
   getPokemonImage,
   getPokemonInfo,
-  savePokemonDB,
+  savePokemonToDB,
 } from "@/api/pokemonAPI";
 
 import { getId } from "@/utils/getId";
 import { checkStatus200 } from "@/utils/checkStatus200";
 import { idNoDTO, initPokemon } from "@/models/pokemon";
+import { timeStamp } from "console";
 
 /** api에 get요청을 보내고, pokemonDTO 타입에 맞는 값을 리턴합니다. */
 async function getPokemonQuery(no: number): Promise<PokemonDTO> {
@@ -41,28 +44,15 @@ async function getPokemonQuery(no: number): Promise<PokemonDTO> {
     no,
     names: mapNamesObj,
     imgUrl,
-    catched_at: "2023-01-01",
+    catched_at: firebase.firestore.Timestamp.fromDate(catched_at),
   };
 
   return pokemonData;
 }
 
 /** snapShot을 return합니다. */
-const fetchPokemonList = async () => {
-  const pokemonDB = await fetchPokemonDB();
-  let newList: FBPokemonDTO[] = [];
-
-  pokemonDB.forEach((document) => {
-    const object = {
-      ...document.data(),
-      id: document.id,
-    };
-    newList.push(object as FBPokemonDTO);
-  });
-  newList.sort((a, b) => a.no - b.no);
-
-  // console.log(newList);
-  return newList;
+const fetchPokemonList = async (): Promise<FBPokemonDTO[]> => {
+  return await fetchPokemonDB();
 };
 
 // Hook return 타입
@@ -89,7 +79,8 @@ export default function usePoketmonQuery(): UsePoketmonQuery {
   async function updateIdNo() {
     setIdNo({ curr: idNo.next, next: getId() });
 
-    savePokemonDB(newPokemon);
+    queryClient.clear();
+    savePokemonToDB(newPokemon);
   }
 
   // useQuery 시작

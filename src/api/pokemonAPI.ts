@@ -1,7 +1,9 @@
 import { axiosInstance } from "./client";
-import { apiBaseDataUrl, apiBaseImgUrl, baseURL } from "./constants";
+import { apiBaseDataUrl, apiBaseImgUrl } from "./constants";
 
 import { PokemonDTO } from "@/models/pokemon";
+import { GetUserRef } from "@/models/user";
+
 import { dbService } from "@/common/fbase";
 
 export const getPokemonInfo = (idNo: number) => {
@@ -12,16 +14,52 @@ export const getPokemonImage = (idNo: number) => {
   return axiosInstance.get(`${apiBaseImgUrl}${idNo}.png`);
 };
 
-export const savePokemonDB = async (payload: PokemonDTO | undefined) => {
-  if (!payload) return;
+/** 유저Ref 관련 object를 리턴합니다. */
+export async function getFirestoreRefObject(): Promise<GetUserRef> {
+  const collectionName = "pokemonDB";
+
+  const uid = sessionStorage.getItem("user");
+  const collection = dbService.collection(collectionName);
+  const userRef = collection.where("userId", "==", uid);
+  const user = (await userRef.get()).docs[0];
+
+  if ((await userRef.get()).empty) return { uid, collection, userRef, user };
+  if (!user) throw new Error("유저 리스트가 없습니다.");
+
+  return { uid, collection, userRef, user };
+}
+
+/** 새 포켓몬을 저장합니다. */
+export const savePokemonToDB = async (payload: PokemonDTO | undefined) => {
+  const { user, uid } = await getFirestoreRefObject();
+  if (!payload || !uid) return;
+
+  addPokemonToList(payload);
+  user.ref.update({ totalPokemonNumber: user.data().totalPokemonNumber + 1 });
+};
+
+/** 새 포켓몬을 추가합니다. */
+const addPokemonToList = async (pokemon: PokemonDTO) => {
+  const { userRef } = await getFirestoreRefObject();
 
   try {
-    const result = await dbService.collection("pokemonDB").add(payload);
-  } catch (err) {
-    throw new Error("포켓몬 저장 실패");
+    const user = (await userRef.get()).docs[0];
+
+    // 새로운 pokemonList 배열을 생성
+    const updatedPokemonList = [...user.data().pokemonList, pokemon];
+
+    // 새로운 버전의 user 문서 저장
+    await user.ref.update({
+      pokemonList: updatedPokemonList,
+    });
+  } catch (error) {
+    console.error("새 포켓몬 저장에 실패 했습니다 : ", error);
   }
 };
 
-export const fetchPokemonDB = () => {
-  return dbService.collection("pokemonDB").get();
+/** 유저의 포켓몬 리스트를 가져옵니다. */
+export const fetchPokemonDB = async () => {
+  const { user } = await getFirestoreRefObject();
+
+  return await user.data().pokemonList;
 };

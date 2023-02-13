@@ -10,6 +10,8 @@ import { ReactQueryDevtools } from "react-query/devtools";
 import { Hydrate, QueryClientProvider } from "react-query";
 import { queryClient } from "@/react-query/queryClient";
 
+import { saveUserData } from "@/api/userAPI";
+
 export default function App({ Component, pageProps }: AppProps) {
   const [init, setInit] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -18,8 +20,11 @@ export default function App({ Component, pageProps }: AppProps) {
     authService.onAuthStateChanged((user) => {
       if (user) {
         setIsLoggedIn(true);
+        saveUserData(user);
+        sessionStorage.setItem("user", user.uid);
       } else {
         setIsLoggedIn(false);
+        sessionStorage.removeItem("user");
       }
       setInit(true);
     });
