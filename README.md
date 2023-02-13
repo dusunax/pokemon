@@ -36,3 +36,11 @@ react, nextJS, react-query, tailwind, firebase
   - 남은 시간 리턴
 - 가용 시간이 되었는지 확인합니다.
   - 가용 여부를 리턴
+
+---
+
+## 일자별 작업내용
+
+- #9
+- #11
+- #13
