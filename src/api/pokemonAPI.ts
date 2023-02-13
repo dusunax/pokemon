@@ -31,14 +31,15 @@ export async function getFirestoreRefObject(): Promise<GetUserRef> {
 
 /** 새 포켓몬을 저장합니다. */
 export const savePokemonToDB = async (payload: PokemonDTO | undefined) => {
-  const uid = sessionStorage.getItem("user");
+  const { user, uid } = await getFirestoreRefObject();
   if (!payload || !uid) return;
 
-  addPokemonToList(payload, uid);
+  addPokemonToList(payload);
+  user.ref.update({ totalPokemonNumber: user.data().totalPokemonNumber + 1 });
 };
 
 /** 새 포켓몬을 추가합니다. */
-const addPokemonToList = async (pokemon: PokemonDTO, uid: string) => {
+const addPokemonToList = async (pokemon: PokemonDTO) => {
   const { userRef } = await getFirestoreRefObject();
 
   try {

@@ -6,7 +6,7 @@ export default function PokemonList({
 }: {
   pokemonQuery: UsePoketmonQuery;
 }) {
-  const { pokemonList, idNo, updateIdNo } = pokemonQuery;
+  const { pokemonList } = pokemonQuery;
 
   if (pokemonList.length === 0) return <></>;
 

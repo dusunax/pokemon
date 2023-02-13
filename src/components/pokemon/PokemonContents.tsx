@@ -11,10 +11,6 @@ export default function PokemonContents() {
   const pokemonQuery = usePokemonQuery();
   const router = useRouter();
 
-  // localStorage.setItem("user", user.uid);
-  window.localStorage.setItem("user", "0");
-  // localStorage.removeItem("user");
-
   return (
     <div className="text-center">
       <div className="flex flex-col gap-4 m-common">

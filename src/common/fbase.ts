@@ -1,7 +1,6 @@
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
-// import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_API_KEY,
@@ -15,7 +14,6 @@ const firebaseConfig = {
 
 if (!firebase.apps.length) {
   const app = firebase.initializeApp(firebaseConfig);
-  // getAnalytics(app);
 }
 
 export const firebaseInstance = firebase;
