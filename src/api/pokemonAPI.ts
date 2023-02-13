@@ -14,6 +14,22 @@ export const getPokemonImage = (idNo: number) => {
   return axiosInstance.get(`${apiBaseImgUrl}${idNo}.png`);
 };
 
+/** 유저Ref 관련 object를 리턴합니다. */
+export async function getFirestoreRefObject(): Promise<GetUserRef> {
+  const collectionName = "pokemonDB";
+
+  const uid = sessionStorage.getItem("user");
+  const collection = dbService.collection(collectionName);
+  const userRef = collection.where("userId", "==", uid);
+  const user = (await userRef.get()).docs[0];
+
+  if ((await userRef.get()).empty) return { uid, collection, userRef, user };
+  if (!user) throw new Error("유저 리스트가 없습니다.");
+
+  return { uid, collection, userRef, user };
+}
+
+/** 새 포켓몬을 저장합니다. */
 export const savePokemonToDB = async (payload: PokemonDTO | undefined) => {
   const uid = sessionStorage.getItem("user");
   if (!payload || !uid) return;
@@ -21,8 +37,9 @@ export const savePokemonToDB = async (payload: PokemonDTO | undefined) => {
   addPokemonToList(payload, uid);
 };
 
+/** 새 포켓몬을 추가합니다. */
 const addPokemonToList = async (pokemon: PokemonDTO, uid: string) => {
-  const { userRef } = await getUserRef();
+  const { userRef } = await getFirestoreRefObject();
 
   try {
     const user = (await userRef.get()).docs[0];
@@ -39,22 +56,9 @@ const addPokemonToList = async (pokemon: PokemonDTO, uid: string) => {
   }
 };
 
+/** 유저의 포켓몬 리스트를 가져옵니다. */
 export const fetchPokemonDB = async () => {
-  const { uid, db, userRef, user } = await getUserRef();
-
-  if (await user.data().pokemonList)
-    throw new Error("포켓몬 리스트가 없습니다.");
+  const { user } = await getFirestoreRefObject();
 
   return await user.data().pokemonList;
 };
-
-async function getUserRef(): Promise<GetUserRef> {
-  const uid = sessionStorage.getItem("user");
-  const db = dbService.collection("pokemonDB2");
-  const userRef = db.where("userId", "==", uid);
-  const user = (await userRef.get()).docs[0];
-
-  if ((await userRef.get()).empty) throw new Error("유저 리스트가 없습니다.");
-
-  return { uid, db, userRef, user };
-}

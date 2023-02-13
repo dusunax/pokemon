@@ -1,25 +1,25 @@
-import { dbService } from "@/common/fbase";
 import { userObjDTO } from "@/models/user";
+import { getFirestoreRefObject } from "./pokemonAPI";
 
 const saveUserData = async (user: userObjDTO) => {
   if (!user) return;
   const { uid, displayName, providerId, metadata } = user;
-  const db = dbService.collection("pokemonDB2");
+  const { collection } = await getFirestoreRefObject();
 
   const initObj = {
     userId: uid,
     userName: displayName,
     providerId: providerId,
     totalPokemonNumber: 0,
-    lastLoggedIn: metadata.lastLoginAt,
-    lastDrawTime: metadata.lastLoginAt,
+    lastLoggedIn: metadata.lastSignInTime,
+    lastDrawTime: metadata.lastSignInTime,
     pokemonList: [],
   };
 
   try {
-    const userRef = db.where("userId", "==", uid);
+    const userRef = collection.where("userId", "==", uid);
 
-    if ((await userRef.get()).empty) db.add(initObj);
+    if ((await userRef.get()).empty) collection.add(initObj);
   } catch (err) {
     console.log(err);
 
