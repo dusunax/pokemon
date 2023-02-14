@@ -55,7 +55,6 @@ export default function Auth() {
     if (!provider) return;
 
     const data = await authService.signInWithPopup(provider);
-    console.log(data);
   };
 
   return (

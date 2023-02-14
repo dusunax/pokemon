@@ -1,6 +1,6 @@
 import firebase from "firebase/compat/app";
 
-import { useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { useQuery, useQueryClient } from "react-query";
 
 import { FBPokemonDTO, PokemonDTO } from "@/models/pokemon";
@@ -20,7 +20,6 @@ import {
 import { getId } from "@/utils/getId";
 import { checkStatus200 } from "@/utils/checkStatus200";
 import { idNoDTO, initPokemon } from "@/models/pokemon";
-import { timeStamp } from "console";
 
 /** api에 get요청을 보내고, pokemonDTO 타입에 맞는 값을 리턴합니다. */
 async function getPokemonQuery(no: number): Promise<PokemonDTO> {
@@ -51,8 +50,11 @@ async function getPokemonQuery(no: number): Promise<PokemonDTO> {
 }
 
 /** snapShot을 return합니다. */
-const fetchPokemonList = async (): Promise<FBPokemonDTO[]> => {
-  return await fetchPokemonDB();
+const fetchPokemonList = async (
+  limit: number,
+  page: number
+): Promise<FBPokemonDTO[]> => {
+  return await fetchPokemonDB(limit, page);
 };
 
 // Hook return 타입
@@ -62,6 +64,10 @@ export interface UsePoketmonQuery {
   idNo: idNoDTO;
   currPokemon: PokemonDTO;
   pokemonList: FBPokemonDTO[];
+  limit: number;
+  page: number;
+  setLimit: Dispatch<SetStateAction<number>>;
+  setPage: Dispatch<SetStateAction<number>>;
 }
 
 /****************************************************/
@@ -71,6 +77,8 @@ export default function usePoketmonQuery(): UsePoketmonQuery {
     curr: 0,
     next: getId(),
   });
+  const [limit, setLimit] = useState(3);
+  const [page, setPage] = useState(0);
 
   const queryClient = useQueryClient();
 
@@ -97,14 +105,18 @@ export default function usePoketmonQuery(): UsePoketmonQuery {
     return getPokemonQuery(idNo.next);
   });
 
+  /** 페이지네이션 */
   const { data: pokemonList = [] } = useQuery(
-    [queryKeys.pokemonList, idNo.curr],
+    [queryKeys.pokemonList, limit, page],
     async () => {
-      const list = await fetchPokemonList();
+      const list = await fetchPokemonList(limit, page);
       queryClient.setQueryData([queryKeys.pokemonList, idNo.curr], list);
       return list;
     },
     {
+      staleTime: 1000,
+      refetchOnWindowFocus: false,
+      retry: 2,
       keepPreviousData: true,
     }
   );
@@ -122,5 +134,9 @@ export default function usePoketmonQuery(): UsePoketmonQuery {
     currPokemon,
     pokemonList,
     idNo,
+    setLimit,
+    setPage,
+    page,
+    limit,
   };
 }
