@@ -1,6 +1,6 @@
 import firebase from "firebase/compat/app";
 
-import { useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { useQuery, useQueryClient } from "react-query";
 
 import { FBPokemonDTO, PokemonDTO } from "@/models/pokemon";
@@ -64,6 +64,10 @@ export interface UsePoketmonQuery {
   idNo: idNoDTO;
   currPokemon: PokemonDTO;
   pokemonList: FBPokemonDTO[];
+  limit: number;
+  page: number;
+  setLimit: Dispatch<SetStateAction<number>>;
+  setPage: Dispatch<SetStateAction<number>>;
 }
 
 /****************************************************/
@@ -73,8 +77,8 @@ export default function usePoketmonQuery(): UsePoketmonQuery {
     curr: 0,
     next: getId(),
   });
-  const [limit, setLimit] = useState(6);
-  const [page, setPage] = useState(1);
+  const [limit, setLimit] = useState(3);
+  const [page, setPage] = useState(0);
 
   const queryClient = useQueryClient();
 
@@ -129,5 +133,9 @@ export default function usePoketmonQuery(): UsePoketmonQuery {
     currPokemon,
     pokemonList,
     idNo,
+    setLimit,
+    setPage,
+    page,
+    limit,
   };
 }

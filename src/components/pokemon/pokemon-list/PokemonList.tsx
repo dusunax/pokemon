@@ -1,3 +1,5 @@
+import { setPaginationFromUserRef } from "@/api/pokemonAPI";
+import { useEffect, useState } from "react";
 import { UsePoketmonQuery } from "../hooks/usePokemonQuery";
 import Pokemon from "../pokemon/Pokemon";
 
@@ -6,9 +8,19 @@ export default function PokemonList({
 }: {
   pokemonQuery: UsePoketmonQuery;
 }) {
-  const { pokemonList } = pokemonQuery;
+  const { pokemonList, setPage, page, limit } = pokemonQuery;
+  const [totalPages, setTotalPages] = useState<null | number>();
+
+  useEffect(() => {
+    const setTotalPage = async () => {
+      const { totalPages } = await setPaginationFromUserRef(limit);
+      setTotalPages(totalPages);
+    };
+    setTotalPage();
+  }, [limit]);
 
   if (pokemonList.length === 0) return <></>;
+  if (!totalPages) return <></>;
 
   return (
     <div>
@@ -21,8 +33,18 @@ export default function PokemonList({
         ))}
       </ul>
       <div>
-        <button>◀</button>
-        <button>▶</button>
+        <button
+          className={page === 0 ? "text-gray-300" : ""}
+          onClick={() => page > 0 && setPage(page - 1)}
+        >
+          ◀
+        </button>
+        <button
+          className={page === totalPages - 1 ? "text-gray-300" : ""}
+          onClick={() => page < totalPages - 1 && setPage(page + 1)}
+        >
+          ▶
+        </button>
       </div>
     </div>
   );

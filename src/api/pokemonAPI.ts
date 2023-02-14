@@ -50,11 +50,17 @@ export const fetchPokemonDB = async (limit: number, next: number) => {
     return a.no - b.no;
   });
 
-  return list.slice(next, next + limit);
+  // limit is 3
+  // page starts at 0
+  // 0, 2
+  // 3, 5
+  // 6, 8
+
+  return list.slice(next * limit, next * limit + limit);
 };
 
 /** 페이지네이션 관련 데이터 */
-export const setPaginationFromUserRef = async (limit: number, next: number) => {
+export const setPaginationFromUserRef = async (limit: number) => {
   const { user } = await getFirestoreRefObject();
 
   const totalPokemonNumber = user.data().totalPokemonNumber;
