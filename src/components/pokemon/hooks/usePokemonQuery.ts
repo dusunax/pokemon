@@ -20,7 +20,6 @@ import {
 import { getId } from "@/utils/getId";
 import { checkStatus200 } from "@/utils/checkStatus200";
 import { idNoDTO, initPokemon } from "@/models/pokemon";
-import { timeStamp } from "console";
 
 /** api에 get요청을 보내고, pokemonDTO 타입에 맞는 값을 리턴합니다. */
 async function getPokemonQuery(no: number): Promise<PokemonDTO> {
@@ -51,8 +50,11 @@ async function getPokemonQuery(no: number): Promise<PokemonDTO> {
 }
 
 /** snapShot을 return합니다. */
-const fetchPokemonList = async (): Promise<FBPokemonDTO[]> => {
-  return await fetchPokemonDB();
+const fetchPokemonList = async (
+  limit: number,
+  page: number
+): Promise<FBPokemonDTO[]> => {
+  return await fetchPokemonDB(limit, page);
 };
 
 // Hook return 타입
@@ -71,6 +73,8 @@ export default function usePoketmonQuery(): UsePoketmonQuery {
     curr: 0,
     next: getId(),
   });
+  const [limit, setLimit] = useState(6);
+  const [page, setPage] = useState(1);
 
   const queryClient = useQueryClient();
 
@@ -97,15 +101,18 @@ export default function usePoketmonQuery(): UsePoketmonQuery {
     return getPokemonQuery(idNo.next);
   });
 
+  /** 페이지네이션 */
   const { data: pokemonList = [] } = useQuery(
-    [queryKeys.pokemonList, idNo.curr],
+    [queryKeys.pokemonList, limit, page],
     async () => {
-      const list = await fetchPokemonList();
+      const list = await fetchPokemonList(limit, page);
       queryClient.setQueryData([queryKeys.pokemonList, idNo.curr], list);
       return list;
     },
     {
-      keepPreviousData: true,
+      staleTime: 60000,
+      refetchOnWindowFocus: false,
+      retry: 2,
     }
   );
 

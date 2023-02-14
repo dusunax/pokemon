@@ -3,6 +3,7 @@ import { apiBaseDataUrl, apiBaseImgUrl } from "./constants";
 
 import { PokemonDTO } from "@/models/pokemon";
 import { getFirestoreRefObject } from "./userAPI";
+import { userObjDTO } from "@/models/user";
 
 /** 포켓몬 정보: API에서 데이터 패칭 */
 export const getPokemonInfo = (idNo: number) => {
@@ -43,8 +44,13 @@ const addPokemonToList = async (pokemon: PokemonDTO) => {
 };
 
 /** 유저의 포켓몬 리스트를 가져옵니다. */
-export const fetchPokemonDB = async () => {
-  const { user } = await getFirestoreRefObject();
+export const fetchPokemonDB = async (limit: number, next: number) => {
+  const { user, userRef } = await getFirestoreRefObject();
+  const list = user.data().pokemonList.sort((a: PokemonDTO, b: PokemonDTO) => {
+    return a.no - b.no;
+  });
 
-  return await user.data().pokemonList;
+  console.log(list.slice(next, next + limit));
+
+  return list.slice(next, next + limit);
 };
