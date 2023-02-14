@@ -44,3 +44,4 @@ react, nextJS, react-query, tailwind, firebase
 - [데이터 패칭 및 unactive 쿼리 키 코드 개선 _ 230210](https://github.com/dusunax/toy/issues/9)
 - [포켓몬 리스트 추가, 관련 hook & query key 작업 _ 230212](https://github.com/dusunax/toy/issues/11)
 - [Firestore : 유저별 리스트 _ 230213](https://github.com/dusunax/toy/issues/13)
+- [Firestore & React-query : 리스트 페이지네이션 추가 _ 230215](https://github.com/dusunax/toy/issues/15)
