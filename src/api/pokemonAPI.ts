@@ -45,12 +45,20 @@ const addPokemonToList = async (pokemon: PokemonDTO) => {
 
 /** 유저의 포켓몬 리스트를 가져옵니다. */
 export const fetchPokemonDB = async (limit: number, next: number) => {
-  const { user, userRef } = await getFirestoreRefObject();
+  const { user } = await getFirestoreRefObject();
   const list = user.data().pokemonList.sort((a: PokemonDTO, b: PokemonDTO) => {
     return a.no - b.no;
   });
 
-  console.log(list.slice(next, next + limit));
-
   return list.slice(next, next + limit);
+};
+
+/** 페이지네이션 관련 데이터 */
+export const setPaginationFromUserRef = async (limit: number, next: number) => {
+  const { user } = await getFirestoreRefObject();
+
+  const totalPokemonNumber = user.data().totalPokemonNumber;
+  const totalPages = Math.ceil(totalPokemonNumber / limit);
+
+  return { totalPages };
 };

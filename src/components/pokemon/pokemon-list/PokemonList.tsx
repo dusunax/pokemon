@@ -20,6 +20,10 @@ export default function PokemonList({
           </li>
         ))}
       </ul>
+      <div>
+        <button>◀</button>
+        <button>▶</button>
+      </div>
     </div>
   );
 }
