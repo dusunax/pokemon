@@ -114,9 +114,10 @@ export default function usePoketmonQuery(): UsePoketmonQuery {
       return list;
     },
     {
-      staleTime: 60000,
+      staleTime: 1000,
       refetchOnWindowFocus: false,
       retry: 2,
+      keepPreviousData: true,
     }
   );
 
