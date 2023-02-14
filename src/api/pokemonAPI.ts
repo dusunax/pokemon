@@ -2,32 +2,17 @@ import { axiosInstance } from "./client";
 import { apiBaseDataUrl, apiBaseImgUrl } from "./constants";
 
 import { PokemonDTO } from "@/models/pokemon";
-import { GetUserRef } from "@/models/user";
+import { getFirestoreRefObject } from "./userAPI";
 
-import { dbService } from "@/common/fbase";
-
+/** 포켓몬 정보: API에서 데이터 패칭 */
 export const getPokemonInfo = (idNo: number) => {
   return axiosInstance.get(`${apiBaseDataUrl}${idNo}`);
 };
 
+/** 포켓몬 이미지: API에서 데이터 패칭 */
 export const getPokemonImage = (idNo: number) => {
   return axiosInstance.get(`${apiBaseImgUrl}${idNo}.png`);
 };
-
-/** 유저Ref 관련 object를 리턴합니다. */
-export async function getFirestoreRefObject(): Promise<GetUserRef> {
-  const collectionName = "pokemonDB";
-
-  const uid = sessionStorage.getItem("user");
-  const collection = dbService.collection(collectionName);
-  const userRef = collection.where("userId", "==", uid);
-  const user = (await userRef.get()).docs[0];
-
-  if ((await userRef.get()).empty) return { uid, collection, userRef, user };
-  if (!user) throw new Error("유저 리스트가 없습니다.");
-
-  return { uid, collection, userRef, user };
-}
 
 /** 새 포켓몬을 저장합니다. */
 export const savePokemonToDB = async (payload: PokemonDTO | undefined) => {
