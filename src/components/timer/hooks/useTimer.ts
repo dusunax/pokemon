@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import { getFirestoreRefObject, getTimeGap } from "@/api/userAPI";
-import { getTimeHHMM } from "@/utils/getTimeHHMM";
+import { formatTimestamp } from "@/utils/timeFormatter";
 
 export default function useTimer() {
   const [lastTime, setLastTime] = useState("00:00:00");
@@ -15,7 +15,7 @@ export default function useTimer() {
 
       const gap = await getTimeGap();
       setTimeGap(gap);
-      setLastTime(userData.lastDrawTime);
+      setLastTime(formatTimestamp(userData.lastDrawTime));
     }
 
     initUserObject();
