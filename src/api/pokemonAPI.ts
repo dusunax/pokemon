@@ -3,7 +3,6 @@ import { apiBaseDataUrl, apiBaseImgUrl } from "./constants";
 
 import { PokemonDTO } from "@/models/pokemon";
 import { getFirestoreRefObject } from "./userAPI";
-import { userObjDTO } from "@/models/user";
 
 /** 포켓몬 정보: API에서 데이터 패칭 */
 export const getPokemonInfo = (idNo: number) => {

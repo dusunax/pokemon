@@ -7,10 +7,10 @@ import type { AppProps } from "next/app";
 import { authService } from "@/common/fbase";
 
 import { ReactQueryDevtools } from "react-query/devtools";
-import { Hydrate, QueryClientProvider } from "react-query";
+import { QueryClientProvider } from "react-query";
 import { queryClient } from "@/react-query/queryClient";
 
-import { saveUserData } from "@/api/userAPI";
+import { saveUserData, updateUserSignInTime } from "@/api/userAPI";
 
 export default function App({ Component, pageProps }: AppProps) {
   const [init, setInit] = useState(false);
@@ -21,6 +21,7 @@ export default function App({ Component, pageProps }: AppProps) {
       if (user) {
         setIsLoggedIn(true);
         saveUserData(user);
+        updateUserSignInTime(user);
         sessionStorage.setItem("user", user.uid);
       } else {
         setIsLoggedIn(false);

@@ -77,7 +77,7 @@ export default function usePoketmonQuery(): UsePoketmonQuery {
     curr: 0,
     next: getId(),
   });
-  const [limit, setLimit] = useState(3);
+  const [limit, setLimit] = useState(10);
   const [page, setPage] = useState(0);
 
   const queryClient = useQueryClient();

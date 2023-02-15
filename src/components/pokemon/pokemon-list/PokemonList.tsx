@@ -8,7 +8,7 @@ export default function PokemonList({
 }: {
   pokemonQuery: UsePoketmonQuery;
 }) {
-  const { pokemonList, setPage, page, limit } = pokemonQuery;
+  const { pokemonList, setPage, page, limit, setLimit } = pokemonQuery;
   const [totalPages, setTotalPages] = useState<null | number>();
 
   useEffect(() => {
