@@ -8,9 +8,10 @@ export default function useTimer() {
   const [timeGap, setTimeGap] = useState("");
   const [isOverHour, setIsOverHour] = useState(false);
 
-  useEffect(() => {
-    const oneHour = 60 * 60 * 1000;
+  const oneHour = 60 * 60 * 1000;
+  // const oneHour = 60;
 
+  useEffect(() => {
     async function initUserObject() {
       const { userRef } = await getFirestoreRefObject();
       const userData = (await userRef.get()).docs[0].data();
@@ -22,11 +23,9 @@ export default function useTimer() {
     }
 
     initUserObject();
-  }, []);
+  }, [oneHour]);
 
   useEffect(() => {
-    const oneHour = 60 * 60 * 1000;
-
     const interval = setInterval(async () => {
       const gap = await getTimeGap();
       setTimeGap(formatTimeGap(gap));
@@ -34,7 +33,7 @@ export default function useTimer() {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [oneHour]);
 
   return { lastTime, timeGap, isOverHour };
 }
