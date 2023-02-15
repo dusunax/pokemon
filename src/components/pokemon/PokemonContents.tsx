@@ -16,9 +16,9 @@ export default function PokemonContents() {
       <div className="flex flex-col gap-4 m-common">
         <h1 className="mb-4 text-4xl font-bold">Pokemon</h1>
 
+        <Timer />
         <PokemonNew pokemonQuery={pokemonQuery} />
         <PokemonList pokemonQuery={pokemonQuery} />
-        <Timer />
         <div
           onClick={() => {
             authService.signOut();

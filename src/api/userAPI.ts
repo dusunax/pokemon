@@ -1,5 +1,6 @@
 import { dbService } from "@/common/fbase";
 import { GetUserRef, userObjDTO } from "@/models/user";
+import { differenceInMilliseconds } from "date-fns";
 
 /** 유저Ref 관련 object를 리턴합니다. */
 export async function getFirestoreRefObject(): Promise<GetUserRef> {
@@ -18,28 +19,108 @@ export async function getFirestoreRefObject(): Promise<GetUserRef> {
 
 /** firestore에 유저 정보를 저장합니다. */
 const saveUserData = async (user: userObjDTO) => {
-  if (!user) return;
-  const { uid, displayName, providerId, metadata } = user;
-  const { collection } = await getFirestoreRefObject();
-
-  const initObj = {
-    userId: uid,
-    userName: displayName,
-    providerId: providerId,
-    totalPokemonNumber: 0,
-    lastLoggedIn: metadata.lastSignInTime,
-    lastDrawTime: metadata.lastSignInTime,
-    pokemonList: [],
-  };
+  if (!user) {
+    throw new Error("사용자 정보가 없습니다.");
+  }
 
   try {
+    const { uid, displayName, providerId, metadata } = user;
+    const { collection } = await getFirestoreRefObject();
+
+    const initObj = {
+      userId: uid,
+      userName: displayName,
+      providerId: providerId,
+      totalPokemonNumber: 0,
+      lastLoggedIn: new Date(),
+      lastDrawTime: new Date(),
+      pokemonList: [],
+    };
+
     const userRef = collection.where("userId", "==", uid);
 
     if ((await userRef.get()).empty) collection.add(initObj);
   } catch (err) {
     console.log(err);
-
-    throw new Error("사용자 DB 저장에 실패");
+    throw new Error("사용자 DB 저장에 실패 했습니다.");
   }
 };
-export { saveUserData };
+
+/** firestore에서 유저 정보를 업데이트합니다. */
+const updateUserSignInTime = async (user: userObjDTO) => {
+  if (!user) {
+    throw new Error("사용자 정보가 없습니다.");
+  }
+
+  try {
+    const { uid, metadata } = user;
+    const { collection } = await getFirestoreRefObject();
+
+    const userRef = collection.where("userId", "==", uid);
+
+    const snapshot = await userRef.get();
+
+    if (snapshot.empty) {
+      throw new Error("해당 유저 정보가 없습니다.");
+    }
+
+    const userDoc = snapshot.docs[0];
+
+    const updatedData = {
+      lastLoggedIn: new Date(),
+    };
+
+    await userDoc.ref.update(updatedData);
+  } catch (err) {
+    console.log(err);
+
+    throw new Error("사용자 DB 업데이트에 실패했습니다.");
+  }
+};
+
+/** firestore에서 lastDrawTime 정보를 업데이트합니다. */
+const updateUserDrawTime = async () => {
+  try {
+    const { uid, collection } = await getFirestoreRefObject();
+
+    const userRef = collection.where("userId", "==", uid);
+
+    const snapshot = await userRef.get();
+
+    if (snapshot.empty) {
+      throw new Error("해당 유저 정보가 없습니다.");
+    }
+
+    const userDoc = snapshot.docs[0];
+
+    const updatedData = {
+      lastDrawTime: new Date(),
+    };
+
+    await userDoc.ref.update(updatedData);
+  } catch (err) {
+    console.log(err);
+
+    throw new Error("사용자 DB 업데이트에 실패했습니다.");
+  }
+};
+
+const getTimeGap = async () => {
+  const oneHour = 60 * 60 * 1000;
+
+  const { userRef } = await getFirestoreRefObject();
+  const userData = (await userRef.get()).docs[0].data();
+
+  const timestamp = userData.lastDrawTime;
+  const lastDrawTime = new Date(
+    timestamp.seconds * 1000 + timestamp.nanoseconds / 1000000
+  );
+
+  const now = new Date();
+  const elapsed = now.getTime() - lastDrawTime.getTime();
+  const remaining = oneHour - elapsed;
+
+  return remaining;
+};
+
+export { saveUserData, updateUserSignInTime, updateUserDrawTime, getTimeGap };
