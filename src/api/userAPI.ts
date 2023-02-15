@@ -120,13 +120,6 @@ const getTimeGap = async () => {
   const elapsed = now.getTime() - lastDrawTime.getTime();
   const remaining = oneHour - elapsed;
 
-  console.log(elapsed, remaining);
-  console.log(timestamp);
-
-  // if (remaining <= 0) {
-  //   return 0;
-  // }
-
   return remaining;
 };
 
