@@ -11,7 +11,9 @@ export default function Pokemon({
   return (
     <div className="new-pokemon px-2 pt-6 my-4 mx-auto bg-white shadow-xl relative">
       <div className="name px-2 rounded-lg absolute top-2 left-2 text-xxs bg-zinc-500 text-zinc-50">
-        {(no > 0 ? no : "") + " " + names["ko"]}
+        <div className={no > 1 && no <= 151 ? " text-green-300" : ""}>
+          {(no > 0 ? no : "") + " " + names["ko"]}
+        </div>
       </div>
       <Image
         src={imgUrl}

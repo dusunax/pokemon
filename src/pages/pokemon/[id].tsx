@@ -9,22 +9,21 @@ import { useRouter } from "next/router";
 
 import Pokemon from "@/components/pokemon/pokemon/Pokemon";
 import { PokemonDTO } from "@/models/pokemon";
-import { useEffect } from "react";
 
 interface ServerSidePropsType {
   pokemonList: PokemonDTO[];
   isLoggedIn: boolean;
 }
 
-const PokemonDetailPage: NextPage<ServerSidePropsType> = (props) => {
+const PokemonDetailPage = ({ pokemonList }: { pokemonList: PokemonDTO[] }) => {
+  // const PokemonDetailPage = () => {
   const router = useRouter();
   const { id } = router.query;
-  const matchedPokemon = {};
+  if (!id) throw new Error("포켓몬 id가 없음!");
 
-  useEffect(() => {
-    console.log(props);
-    console.log(id);
-  }, [props, id]);
+  const matchedPokemon = pokemonList.find((pokemon) => pokemon.no === +id);
+  // const matchedPokemon = undefined;
+  if (!matchedPokemon) throw new Error("포켓몬이 없음!");
 
   return (
     <>
@@ -33,8 +32,15 @@ const PokemonDetailPage: NextPage<ServerSidePropsType> = (props) => {
       </Head>
       <div>
         {/* id에 맞는 포켓몬을 리스트에서 찾아서 Pokemon에 전달 */}
-        {/* <Pokemon pokemon={matchedPokemon} /> */}
-        <Link href={`/pokemon/`}>뒤로 가기</Link>
+        <div className="w-60 mt-10 mx-auto">
+          <Pokemon pokemon={matchedPokemon} />
+        </div>
+        <h3 className="my-4 text-xl text-center font-bold">
+          {matchedPokemon.names["ko"]}
+        </h3>
+        <p className="text-center">
+          <Link href={`/pokemon/`}>뒤로 가기</Link>
+        </p>
       </div>
     </>
   );

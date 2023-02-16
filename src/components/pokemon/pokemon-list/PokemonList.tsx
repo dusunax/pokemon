@@ -1,4 +1,5 @@
 import { fetchPokemonData, setPaginationFromUserRef } from "@/api/pokemonAPI";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { UsePoketmonQuery } from "../hooks/usePokemonQuery";
 import Pokemon from "../pokemon/Pokemon";
@@ -28,7 +29,13 @@ export default function PokemonList({
       <ul className="grid grid-cols-2 xxs:grid-cols-3 xs:grid-cols-5 md:grid-cols-3">
         {pokemonList.map((item) => (
           <li key={item.no} className="text-xxs">
-            <Pokemon pokemon={item} />
+            {item.no <= 151 ? (
+              <Link href={`/pokemon/${item.no}`}>
+                <Pokemon pokemon={item} />
+              </Link>
+            ) : (
+              <Pokemon pokemon={item} />
+            )}
           </li>
         ))}
       </ul>
