@@ -19,7 +19,7 @@ export default function useTimer() {
       const gap = await getTimeGap();
       setTimeGap(formatTimeGap(gap));
       setLastTime(formatTimestamp(userData.lastDrawTime));
-      setIsOverHour(gap >= oneHour);
+      setIsOverHour(gap <= oneHour);
     }
 
     initUserObject();
@@ -29,7 +29,7 @@ export default function useTimer() {
     const interval = setInterval(async () => {
       const gap = await getTimeGap();
       setTimeGap(formatTimeGap(gap));
-      setIsOverHour(gap >= oneHour);
+      setIsOverHour(gap <= oneHour);
     }, 1000);
 
     return () => clearInterval(interval);

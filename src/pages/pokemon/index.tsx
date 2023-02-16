@@ -16,7 +16,7 @@ function PokemonPage({ pokemonList }: { pokemonList: PokemonDTO[] }) {
         <meta property="og:description" content="포켓몬 페이지입니다." />
       </Head>
       <main>
-        <PokemonContents pokemonList={pokemonList} />
+        <PokemonContents />
       </main>
     </>
   );
