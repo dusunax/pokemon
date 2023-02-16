@@ -6,8 +6,13 @@ import Timer from "../timer/Timer";
 
 import { authService } from "@/common/fbase";
 import usePokemonQuery from "./hooks/usePokemonQuery";
+import { PokemonDTO } from "@/models/pokemon";
 
-export default function PokemonContents() {
+export default function PokemonContents({
+  pokemonList,
+}: {
+  pokemonList: PokemonDTO[];
+}) {
   const pokemonQuery = usePokemonQuery();
   const router = useRouter();
 

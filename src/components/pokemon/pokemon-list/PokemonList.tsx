@@ -1,4 +1,4 @@
-import { setPaginationFromUserRef } from "@/api/pokemonAPI";
+import { fetchPokemonData, setPaginationFromUserRef } from "@/api/pokemonAPI";
 import { useEffect, useState } from "react";
 import { UsePoketmonQuery } from "../hooks/usePokemonQuery";
 import Pokemon from "../pokemon/Pokemon";

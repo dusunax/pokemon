@@ -3,6 +3,11 @@ import { apiBaseDataUrl, apiBaseImgUrl } from "./constants";
 
 import { PokemonDTO } from "@/models/pokemon";
 import { getFirestoreRefObject } from "./userAPI";
+import { checkStatus200 } from "@/utils/checkStatus200";
+import {
+  mappingLanguageKey,
+  mappingNamesToSingleObj,
+} from "@/components/pokemon/utils/mappingPokemonName";
 
 /** 포켓몬 정보: API에서 데이터 패칭 */
 export const getPokemonInfo = (idNo: number) => {
@@ -67,3 +72,32 @@ export const setPaginationFromUserRef = async (limit: number) => {
 
   return { totalPages };
 };
+
+/** 포켓몬 1세대 리스트 */
+export async function fetchPokemonData() {
+  const pokemonList = [];
+
+  for (let no = 1; no <= 151; no++) {
+    console.log("데이터 패칭 진행 중");
+
+    const infoRes = await getPokemonInfo(no);
+    const imgRes = await getPokemonImage(no);
+
+    const imgUrl = imgRes.config.url!;
+    let resNames = infoRes.data.names;
+
+    const mapNamesObj: any = mappingLanguageKey(
+      mappingNamesToSingleObj(resNames)
+    );
+
+    const pokemonData: PokemonDTO = {
+      no,
+      names: mapNamesObj,
+      imgUrl,
+      catched_at: new Date(),
+    };
+
+    pokemonList.push(pokemonData);
+  }
+  return pokemonList;
+}
