@@ -1,5 +1,3 @@
-import firebase from "firebase/compat/app";
-
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { useQuery, useQueryClient } from "react-query";
 
@@ -43,7 +41,7 @@ async function getPokemonQuery(no: number): Promise<PokemonDTO> {
     no,
     names: mapNamesObj,
     imgUrl,
-    catched_at: firebase.firestore.Timestamp.fromDate(catched_at),
+    catched_at: new Date(),
   };
 
   return pokemonData;

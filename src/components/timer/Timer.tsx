@@ -6,7 +6,7 @@ export default function Timer() {
 
   return (
     <div>
-      <p>
+      <div>
         <div
           className={
             "w-3 h-3 rounded-lg inline-block mx-2" +
@@ -20,7 +20,7 @@ export default function Timer() {
             (isOverHour ? " bg-green-400" : " bg-rose-600")
           }
         ></div>
-      </p>
+      </div>
 
       <p className="text-indigo-600 h-6">
         {isOverHour ? "" : `1시간 까지 ${timeGap}`}

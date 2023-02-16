@@ -1,0 +1,1814 @@
+[
+  {
+    "no": 1,
+    "names": {
+      "ko": "이상해씨",
+      "en": "Bulbasaur",
+      "jp": "フシギダネ",
+      "cn": "妙蛙種子",
+      "fr": "Bulbizarre"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+    "catched_at": "2023-02-16T14:19:49.657Z"
+  },
+  {
+    "no": 2,
+    "names": {
+      "ko": "이상해풀",
+      "en": "Ivysaur",
+      "jp": "フシギソウ",
+      "cn": "妙蛙草",
+      "fr": "Herbizarre"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png",
+    "catched_at": "2023-02-16T14:19:51.700Z"
+  },
+  {
+    "no": 3,
+    "names": {
+      "ko": "이상해꽃",
+      "en": "Venusaur",
+      "jp": "フシギバナ",
+      "cn": "妙蛙花",
+      "fr": "Florizarre"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
+    "catched_at": "2023-02-16T14:19:53.738Z"
+  },
+  {
+    "no": 4,
+    "names": {
+      "ko": "파이리",
+      "en": "Charmander",
+      "jp": "ヒトカゲ",
+      "cn": "小火龍",
+      "fr": "Salamèche"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
+    "catched_at": "2023-02-16T14:19:55.781Z"
+  },
+  {
+    "no": 5,
+    "names": {
+      "ko": "리자드",
+      "en": "Charmeleon",
+      "jp": "リザード",
+      "cn": "火恐龍",
+      "fr": "Reptincel"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png",
+    "catched_at": "2023-02-16T14:19:57.818Z"
+  },
+  {
+    "no": 6,
+    "names": {
+      "ko": "리자몽",
+      "en": "Charizard",
+      "jp": "リザードン",
+      "cn": "噴火龍",
+      "fr": "Dracaufeu"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png",
+    "catched_at": "2023-02-16T14:19:59.857Z"
+  },
+  {
+    "no": 7,
+    "names": {
+      "ko": "꼬부기",
+      "en": "Squirtle",
+      "jp": "ゼニガメ",
+      "cn": "傑尼龜",
+      "fr": "Carapuce"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png",
+    "catched_at": "2023-02-16T14:19:59.864Z"
+  },
+  {
+    "no": 8,
+    "names": {
+      "ko": "어니부기",
+      "en": "Wartortle",
+      "jp": "カメール",
+      "cn": "卡咪龜",
+      "fr": "Carabaffe"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/8.png",
+    "catched_at": "2023-02-16T14:19:59.874Z"
+  },
+  {
+    "no": 9,
+    "names": {
+      "ko": "거북왕",
+      "en": "Blastoise",
+      "jp": "カメックス",
+      "cn": "水箭龜",
+      "fr": "Tortank"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/9.png",
+    "catched_at": "2023-02-16T14:19:59.882Z"
+  },
+  {
+    "no": 10,
+    "names": {
+      "ko": "캐터피",
+      "en": "Caterpie",
+      "jp": "キャタピー",
+      "cn": "綠毛蟲",
+      "fr": "Chenipan"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10.png",
+    "catched_at": "2023-02-16T14:19:59.899Z"
+  },
+  {
+    "no": 11,
+    "names": {
+      "ko": "단데기",
+      "en": "Metapod",
+      "jp": "トランセル",
+      "cn": "鐵甲蛹",
+      "fr": "Chrysacier"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/11.png",
+    "catched_at": "2023-02-16T14:19:59.907Z"
+  },
+  {
+    "no": 12,
+    "names": {
+      "ko": "버터플",
+      "en": "Butterfree",
+      "jp": "バタフリー",
+      "cn": "巴大蝶",
+      "fr": "Papilusion"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/12.png",
+    "catched_at": "2023-02-16T14:19:59.916Z"
+  },
+  {
+    "no": 13,
+    "names": {
+      "ko": "뿔충이",
+      "en": "Weedle",
+      "jp": "ビードル",
+      "cn": "獨角蟲",
+      "fr": "Aspicot"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/13.png",
+    "catched_at": "2023-02-16T14:19:59.922Z"
+  },
+  {
+    "no": 14,
+    "names": {
+      "ko": "딱충이",
+      "en": "Kakuna",
+      "jp": "コクーン",
+      "cn": "鐵殼蛹",
+      "fr": "Coconfort"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/14.png",
+    "catched_at": "2023-02-16T14:19:59.930Z"
+  },
+  {
+    "no": 15,
+    "names": {
+      "ko": "독침붕",
+      "en": "Beedrill",
+      "jp": "スピアー",
+      "cn": "大針蜂",
+      "fr": "Dardargnan"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/15.png",
+    "catched_at": "2023-02-16T14:19:59.937Z"
+  },
+  {
+    "no": 16,
+    "names": {
+      "ko": "구구",
+      "en": "Pidgey",
+      "jp": "ポッポ",
+      "cn": "波波",
+      "fr": "Roucool"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/16.png",
+    "catched_at": "2023-02-16T14:19:59.945Z"
+  },
+  {
+    "no": 17,
+    "names": {
+      "ko": "피죤",
+      "en": "Pidgeotto",
+      "jp": "ピジョン",
+      "cn": "比比鳥",
+      "fr": "Roucoups"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/17.png",
+    "catched_at": "2023-02-16T14:19:59.954Z"
+  },
+  {
+    "no": 18,
+    "names": {
+      "ko": "피죤투",
+      "en": "Pidgeot",
+      "jp": "ピジョット",
+      "cn": "大比鳥",
+      "fr": "Roucarnage"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/18.png",
+    "catched_at": "2023-02-16T14:19:59.959Z"
+  },
+  {
+    "no": 19,
+    "names": {
+      "ko": "꼬렛",
+      "en": "Rattata",
+      "jp": "コラッタ",
+      "cn": "小拉達",
+      "fr": "Rattata"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/19.png",
+    "catched_at": "2023-02-16T14:19:59.966Z"
+  },
+  {
+    "no": 20,
+    "names": {
+      "ko": "레트라",
+      "en": "Raticate",
+      "jp": "ラッタ",
+      "cn": "拉達",
+      "fr": "Rattatac"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/20.png",
+    "catched_at": "2023-02-16T14:19:59.973Z"
+  },
+  {
+    "no": 21,
+    "names": {
+      "ko": "깨비참",
+      "en": "Spearow",
+      "jp": "オニスズメ",
+      "cn": "烈雀",
+      "fr": "Piafabec"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/21.png",
+    "catched_at": "2023-02-16T14:19:59.979Z"
+  },
+  {
+    "no": 22,
+    "names": {
+      "ko": "깨비드릴조",
+      "en": "Fearow",
+      "jp": "オニドリル",
+      "cn": "大嘴雀",
+      "fr": "Rapasdepic"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/22.png",
+    "catched_at": "2023-02-16T14:19:59.987Z"
+  },
+  {
+    "no": 23,
+    "names": {
+      "ko": "아보",
+      "en": "Ekans",
+      "jp": "アーボ",
+      "cn": "阿柏蛇",
+      "fr": "Abo"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/23.png",
+    "catched_at": "2023-02-16T14:19:59.993Z"
+  },
+  {
+    "no": 24,
+    "names": {
+      "ko": "아보크",
+      "en": "Arbok",
+      "jp": "アーボック",
+      "cn": "阿柏怪",
+      "fr": "Arbok"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/24.png",
+    "catched_at": "2023-02-16T14:20:00.001Z"
+  },
+  {
+    "no": 25,
+    "names": {
+      "ko": "피카츄",
+      "en": "Pikachu",
+      "jp": "ピカチュウ",
+      "cn": "皮卡丘",
+      "fr": "Pikachu"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png",
+    "catched_at": "2023-02-16T14:20:00.008Z"
+  },
+  {
+    "no": 26,
+    "names": {
+      "ko": "라이츄",
+      "en": "Raichu",
+      "jp": "ライチュウ",
+      "cn": "雷丘",
+      "fr": "Raichu"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/26.png",
+    "catched_at": "2023-02-16T14:20:00.015Z"
+  },
+  {
+    "no": 27,
+    "names": {
+      "ko": "모래두지",
+      "en": "Sandshrew",
+      "jp": "サンド",
+      "cn": "穿山鼠",
+      "fr": "Sabelette"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/27.png",
+    "catched_at": "2023-02-16T14:20:00.023Z"
+  },
+  {
+    "no": 28,
+    "names": {
+      "ko": "고지",
+      "en": "Sandslash",
+      "jp": "サンドパン",
+      "cn": "穿山王",
+      "fr": "Sablaireau"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/28.png",
+    "catched_at": "2023-02-16T14:20:00.031Z"
+  },
+  {
+    "no": 29,
+    "names": {
+      "ko": "니드런♀",
+      "en": "Nidoran♀",
+      "jp": "ニドラン♀",
+      "cn": "尼多蘭",
+      "fr": "Nidoran♀"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/29.png",
+    "catched_at": "2023-02-16T14:20:00.038Z"
+  },
+  {
+    "no": 30,
+    "names": {
+      "ko": "니드리나",
+      "en": "Nidorina",
+      "jp": "ニドリーナ",
+      "cn": "尼多娜",
+      "fr": "Nidorina"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/30.png",
+    "catched_at": "2023-02-16T14:20:00.044Z"
+  },
+  {
+    "no": 31,
+    "names": {
+      "ko": "니드퀸",
+      "en": "Nidoqueen",
+      "jp": "ニドクイン",
+      "cn": "尼多后",
+      "fr": "Nidoqueen"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/31.png",
+    "catched_at": "2023-02-16T14:20:00.051Z"
+  },
+  {
+    "no": 32,
+    "names": {
+      "ko": "니드런♂",
+      "en": "Nidoran♂",
+      "jp": "ニドラン♂",
+      "cn": "尼多朗",
+      "fr": "Nidoran♂"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/32.png",
+    "catched_at": "2023-02-16T14:20:00.061Z"
+  },
+  {
+    "no": 33,
+    "names": {
+      "ko": "니드리노",
+      "en": "Nidorino",
+      "jp": "ニドリーノ",
+      "cn": "尼多力諾",
+      "fr": "Nidorino"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/33.png",
+    "catched_at": "2023-02-16T14:20:00.068Z"
+  },
+  {
+    "no": 34,
+    "names": {
+      "ko": "니드킹",
+      "en": "Nidoking",
+      "jp": "ニドキング",
+      "cn": "尼多王",
+      "fr": "Nidoking"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/34.png",
+    "catched_at": "2023-02-16T14:20:00.088Z"
+  },
+  {
+    "no": 35,
+    "names": {
+      "ko": "삐삐",
+      "en": "Clefairy",
+      "jp": "ピッピ",
+      "cn": "皮皮",
+      "fr": "Mélofée"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/35.png",
+    "catched_at": "2023-02-16T14:20:00.094Z"
+  },
+  {
+    "no": 36,
+    "names": {
+      "ko": "픽시",
+      "en": "Clefable",
+      "jp": "ピクシー",
+      "cn": "皮可西",
+      "fr": "Mélodelfe"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/36.png",
+    "catched_at": "2023-02-16T14:20:00.103Z"
+  },
+  {
+    "no": 37,
+    "names": {
+      "ko": "식스테일",
+      "en": "Vulpix",
+      "jp": "ロコン",
+      "cn": "六尾",
+      "fr": "Goupix"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/37.png",
+    "catched_at": "2023-02-16T14:20:00.110Z"
+  },
+  {
+    "no": 38,
+    "names": {
+      "ko": "나인테일",
+      "en": "Ninetales",
+      "jp": "キュウコン",
+      "cn": "九尾",
+      "fr": "Feunard"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/38.png",
+    "catched_at": "2023-02-16T14:20:00.117Z"
+  },
+  {
+    "no": 39,
+    "names": {
+      "ko": "푸린",
+      "en": "Jigglypuff",
+      "jp": "プリン",
+      "cn": "胖丁",
+      "fr": "Rondoudou"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/39.png",
+    "catched_at": "2023-02-16T14:20:00.123Z"
+  },
+  {
+    "no": 40,
+    "names": {
+      "ko": "푸크린",
+      "en": "Wigglytuff",
+      "jp": "プクリン",
+      "cn": "胖可丁",
+      "fr": "Grodoudou"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/40.png",
+    "catched_at": "2023-02-16T14:20:00.130Z"
+  },
+  {
+    "no": 41,
+    "names": {
+      "ko": "주뱃",
+      "en": "Zubat",
+      "jp": "ズバット",
+      "cn": "超音蝠",
+      "fr": "Nosferapti"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/41.png",
+    "catched_at": "2023-02-16T14:20:00.137Z"
+  },
+  {
+    "no": 42,
+    "names": {
+      "ko": "골뱃",
+      "en": "Golbat",
+      "jp": "ゴルバット",
+      "cn": "大嘴蝠",
+      "fr": "Nosferalto"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/42.png",
+    "catched_at": "2023-02-16T14:20:00.143Z"
+  },
+  {
+    "no": 43,
+    "names": {
+      "ko": "뚜벅쵸",
+      "en": "Oddish",
+      "jp": "ナゾノクサ",
+      "cn": "走路草",
+      "fr": "Mystherbe"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/43.png",
+    "catched_at": "2023-02-16T14:20:00.150Z"
+  },
+  {
+    "no": 44,
+    "names": {
+      "ko": "냄새꼬",
+      "en": "Gloom",
+      "jp": "クサイハナ",
+      "cn": "臭臭花",
+      "fr": "Ortide"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/44.png",
+    "catched_at": "2023-02-16T14:20:00.156Z"
+  },
+  {
+    "no": 45,
+    "names": {
+      "ko": "라플레시아",
+      "en": "Vileplume",
+      "jp": "ラフレシア",
+      "cn": "霸王花",
+      "fr": "Rafflesia"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/45.png",
+    "catched_at": "2023-02-16T14:20:00.162Z"
+  },
+  {
+    "no": 46,
+    "names": {
+      "ko": "파라스",
+      "en": "Paras",
+      "jp": "パラス",
+      "cn": "派拉斯",
+      "fr": "Paras"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/46.png",
+    "catched_at": "2023-02-16T14:20:00.172Z"
+  },
+  {
+    "no": 47,
+    "names": {
+      "ko": "파라섹트",
+      "en": "Parasect",
+      "jp": "パラセクト",
+      "cn": "派拉斯特",
+      "fr": "Parasect"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/47.png",
+    "catched_at": "2023-02-16T14:20:00.178Z"
+  },
+  {
+    "no": 48,
+    "names": {
+      "ko": "콘팡",
+      "en": "Venonat",
+      "jp": "コンパン",
+      "cn": "毛球",
+      "fr": "Mimitoss"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/48.png",
+    "catched_at": "2023-02-16T14:20:00.191Z"
+  },
+  {
+    "no": 49,
+    "names": {
+      "ko": "도나리",
+      "en": "Venomoth",
+      "jp": "モルフォン",
+      "cn": "摩魯蛾",
+      "fr": "Aéromite"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/49.png",
+    "catched_at": "2023-02-16T14:20:00.200Z"
+  },
+  {
+    "no": 50,
+    "names": {
+      "ko": "디그다",
+      "en": "Diglett",
+      "jp": "ディグダ",
+      "cn": "地鼠",
+      "fr": "Taupiqueur"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/50.png",
+    "catched_at": "2023-02-16T14:20:42.501Z"
+  },
+  {
+    "no": 51,
+    "names": {
+      "ko": "닥트리오",
+      "en": "Dugtrio",
+      "jp": "ダグトリオ",
+      "cn": "三地鼠",
+      "fr": "Triopikeur"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/51.png",
+    "catched_at": "2023-02-16T14:20:42.510Z"
+  },
+  {
+    "no": 52,
+    "names": {
+      "ko": "나옹",
+      "en": "Meowth",
+      "jp": "ニャース",
+      "cn": "喵喵",
+      "fr": "Miaouss"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/52.png",
+    "catched_at": "2023-02-16T14:20:42.520Z"
+  },
+  {
+    "no": 53,
+    "names": {
+      "ko": "페르시온",
+      "en": "Persian",
+      "jp": "ペルシアン",
+      "cn": "貓老大",
+      "fr": "Persian"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/53.png",
+    "catched_at": "2023-02-16T14:20:42.528Z"
+  },
+  {
+    "no": 54,
+    "names": {
+      "ko": "고라파덕",
+      "en": "Psyduck",
+      "jp": "コダック",
+      "cn": "可達鴨",
+      "fr": "Psykokwak"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/54.png",
+    "catched_at": "2023-02-16T14:20:42.539Z"
+  },
+  {
+    "no": 55,
+    "names": {
+      "ko": "골덕",
+      "en": "Golduck",
+      "jp": "ゴルダック",
+      "cn": "哥達鴨",
+      "fr": "Akwakwak"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/55.png",
+    "catched_at": "2023-02-16T14:20:42.547Z"
+  },
+  {
+    "no": 56,
+    "names": {
+      "ko": "망키",
+      "en": "Mankey",
+      "jp": "マンキー",
+      "cn": "猴怪",
+      "fr": "Férosinge"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/56.png",
+    "catched_at": "2023-02-16T14:20:42.556Z"
+  },
+  {
+    "no": 57,
+    "names": {
+      "ko": "성원숭",
+      "en": "Primeape",
+      "jp": "オコリザル",
+      "cn": "火爆猴",
+      "fr": "Colossinge"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/57.png",
+    "catched_at": "2023-02-16T14:20:42.565Z"
+  },
+  {
+    "no": 58,
+    "names": {
+      "ko": "가디",
+      "en": "Growlithe",
+      "jp": "ガーディ",
+      "cn": "卡蒂狗",
+      "fr": "Caninos"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/58.png",
+    "catched_at": "2023-02-16T14:20:42.574Z"
+  },
+  {
+    "no": 59,
+    "names": {
+      "ko": "윈디",
+      "en": "Arcanine",
+      "jp": "ウインディ",
+      "cn": "風速狗",
+      "fr": "Arcanin"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/59.png",
+    "catched_at": "2023-02-16T14:20:42.583Z"
+  },
+  {
+    "no": 60,
+    "names": {
+      "ko": "발챙이",
+      "en": "Poliwag",
+      "jp": "ニョロモ",
+      "cn": "蚊香蝌蚪",
+      "fr": "Ptitard"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/60.png",
+    "catched_at": "2023-02-16T14:20:42.592Z"
+  },
+  {
+    "no": 61,
+    "names": {
+      "ko": "슈륙챙이",
+      "en": "Poliwhirl",
+      "jp": "ニョロゾ",
+      "cn": "蚊香君",
+      "fr": "Têtarte"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/61.png",
+    "catched_at": "2023-02-16T14:20:42.599Z"
+  },
+  {
+    "no": 62,
+    "names": {
+      "ko": "강챙이",
+      "en": "Poliwrath",
+      "jp": "ニョロボン",
+      "cn": "蚊香泳士",
+      "fr": "Tartard"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/62.png",
+    "catched_at": "2023-02-16T14:20:42.608Z"
+  },
+  {
+    "no": 63,
+    "names": {
+      "ko": "캐이시",
+      "en": "Abra",
+      "jp": "ケーシィ",
+      "cn": "凱西",
+      "fr": "Abra"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/63.png",
+    "catched_at": "2023-02-16T14:20:42.618Z"
+  },
+  {
+    "no": 64,
+    "names": {
+      "ko": "윤겔라",
+      "en": "Kadabra",
+      "jp": "ユンゲラー",
+      "cn": "勇基拉",
+      "fr": "Kadabra"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/64.png",
+    "catched_at": "2023-02-16T14:20:42.626Z"
+  },
+  {
+    "no": 65,
+    "names": {
+      "ko": "후딘",
+      "en": "Alakazam",
+      "jp": "フーディン",
+      "cn": "胡地",
+      "fr": "Alakazam"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/65.png",
+    "catched_at": "2023-02-16T14:20:42.649Z"
+  },
+  {
+    "no": 66,
+    "names": {
+      "ko": "알통몬",
+      "en": "Machop",
+      "jp": "ワンリキー",
+      "cn": "腕力",
+      "fr": "Machoc"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/66.png",
+    "catched_at": "2023-02-16T14:20:42.656Z"
+  },
+  {
+    "no": 67,
+    "names": {
+      "ko": "근육몬",
+      "en": "Machoke",
+      "jp": "ゴーリキー",
+      "cn": "豪力",
+      "fr": "Machopeur"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/67.png",
+    "catched_at": "2023-02-16T14:20:42.664Z"
+  },
+  {
+    "no": 68,
+    "names": {
+      "ko": "괴력몬",
+      "en": "Machamp",
+      "jp": "カイリキー",
+      "cn": "怪力",
+      "fr": "Mackogneur"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/68.png",
+    "catched_at": "2023-02-16T14:20:42.671Z"
+  },
+  {
+    "no": 69,
+    "names": {
+      "ko": "모다피",
+      "en": "Bellsprout",
+      "jp": "マダツボミ",
+      "cn": "喇叭芽",
+      "fr": "Chétiflor"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/69.png",
+    "catched_at": "2023-02-16T14:20:42.679Z"
+  },
+  {
+    "no": 70,
+    "names": {
+      "ko": "우츠동",
+      "en": "Weepinbell",
+      "jp": "ウツドン",
+      "cn": "口呆花",
+      "fr": "Boustiflor"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/70.png",
+    "catched_at": "2023-02-16T14:20:42.687Z"
+  },
+  {
+    "no": 71,
+    "names": {
+      "ko": "우츠보트",
+      "en": "Victreebel",
+      "jp": "ウツボット",
+      "cn": "大食花",
+      "fr": "Empiflor"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/71.png",
+    "catched_at": "2023-02-16T14:20:42.695Z"
+  },
+  {
+    "no": 72,
+    "names": {
+      "ko": "왕눈해",
+      "en": "Tentacool",
+      "jp": "メノクラゲ",
+      "cn": "瑪瑙水母",
+      "fr": "Tentacool"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/72.png",
+    "catched_at": "2023-02-16T14:20:42.763Z"
+  },
+  {
+    "no": 73,
+    "names": {
+      "ko": "독파리",
+      "en": "Tentacruel",
+      "jp": "ドククラゲ",
+      "cn": "毒刺水母",
+      "fr": "Tentacruel"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/73.png",
+    "catched_at": "2023-02-16T14:20:47.062Z"
+  },
+  {
+    "no": 74,
+    "names": {
+      "ko": "꼬마돌",
+      "en": "Geodude",
+      "jp": "イシツブテ",
+      "cn": "小拳石",
+      "fr": "Racaillou"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/74.png",
+    "catched_at": "2023-02-16T14:20:51.341Z"
+  },
+  {
+    "no": 75,
+    "names": {
+      "ko": "데구리",
+      "en": "Graveler",
+      "jp": "ゴローン",
+      "cn": "隆隆石",
+      "fr": "Gravalanch"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/75.png",
+    "catched_at": "2023-02-16T14:20:55.596Z"
+  },
+  {
+    "no": 76,
+    "names": {
+      "ko": "딱구리",
+      "en": "Golem",
+      "jp": "ゴローニャ",
+      "cn": "隆隆岩",
+      "fr": "Grolem"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/76.png",
+    "catched_at": "2023-02-16T14:20:59.694Z"
+  },
+  {
+    "no": 77,
+    "names": {
+      "ko": "포니타",
+      "en": "Ponyta",
+      "jp": "ポニータ",
+      "cn": "小火馬",
+      "fr": "Ponyta"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/77.png",
+    "catched_at": "2023-02-16T14:21:03.879Z"
+  },
+  {
+    "no": 78,
+    "names": {
+      "ko": "날쌩마",
+      "en": "Rapidash",
+      "jp": "ギャロップ",
+      "cn": "烈焰馬",
+      "fr": "Galopa"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/78.png",
+    "catched_at": "2023-02-16T14:21:08.048Z"
+  },
+  {
+    "no": 79,
+    "names": {
+      "ko": "야돈",
+      "en": "Slowpoke",
+      "jp": "ヤドン",
+      "cn": "呆呆獸",
+      "fr": "Ramoloss"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/79.png",
+    "catched_at": "2023-02-16T14:21:12.378Z"
+  },
+  {
+    "no": 80,
+    "names": {
+      "ko": "야도란",
+      "en": "Slowbro",
+      "jp": "ヤドラン",
+      "cn": "呆殼獸",
+      "fr": "Flagadoss"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/80.png",
+    "catched_at": "2023-02-16T14:21:16.631Z"
+  },
+  {
+    "no": 81,
+    "names": {
+      "ko": "코일",
+      "en": "Magnemite",
+      "jp": "コイル",
+      "cn": "小磁怪",
+      "fr": "Magnéti"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/81.png",
+    "catched_at": "2023-02-16T14:21:20.711Z"
+  },
+  {
+    "no": 82,
+    "names": {
+      "ko": "레어코일",
+      "en": "Magneton",
+      "jp": "レアコイル",
+      "cn": "三合一磁怪",
+      "fr": "Magnéton"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/82.png",
+    "catched_at": "2023-02-16T14:21:24.972Z"
+  },
+  {
+    "no": 83,
+    "names": {
+      "ko": "파오리",
+      "en": "Farfetch’d",
+      "jp": "カモネギ",
+      "cn": "大蔥鴨",
+      "fr": "Canarticho"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/83.png",
+    "catched_at": "2023-02-16T14:21:29.141Z"
+  },
+  {
+    "no": 84,
+    "names": {
+      "ko": "두두",
+      "en": "Doduo",
+      "jp": "ドードー",
+      "cn": "嘟嘟",
+      "fr": "Doduo"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/84.png",
+    "catched_at": "2023-02-16T14:21:33.376Z"
+  },
+  {
+    "no": 85,
+    "names": {
+      "ko": "두트리오",
+      "en": "Dodrio",
+      "jp": "ドードリオ",
+      "cn": "嘟嘟利",
+      "fr": "Dodrio"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/85.png",
+    "catched_at": "2023-02-16T14:21:37.603Z"
+  },
+  {
+    "no": 86,
+    "names": {
+      "ko": "쥬쥬",
+      "en": "Seel",
+      "jp": "パウワウ",
+      "cn": "小海獅",
+      "fr": "Otaria"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/86.png",
+    "catched_at": "2023-02-16T14:21:41.801Z"
+  },
+  {
+    "no": 87,
+    "names": {
+      "ko": "쥬레곤",
+      "en": "Dewgong",
+      "jp": "ジュゴン",
+      "cn": "白海獅",
+      "fr": "Lamantine"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/87.png",
+    "catched_at": "2023-02-16T14:21:45.971Z"
+  },
+  {
+    "no": 88,
+    "names": {
+      "ko": "질퍽이",
+      "en": "Grimer",
+      "jp": "ベトベター",
+      "cn": "臭泥",
+      "fr": "Tadmorv"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/88.png",
+    "catched_at": "2023-02-16T14:21:50.238Z"
+  },
+  {
+    "no": 89,
+    "names": {
+      "ko": "질뻐기",
+      "en": "Muk",
+      "jp": "ベトベトン",
+      "cn": "臭臭泥",
+      "fr": "Grotadmorv"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/89.png",
+    "catched_at": "2023-02-16T14:21:54.311Z"
+  },
+  {
+    "no": 90,
+    "names": {
+      "ko": "셀러",
+      "en": "Shellder",
+      "jp": "シェルダー",
+      "cn": "大舌貝",
+      "fr": "Kokiyas"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/90.png",
+    "catched_at": "2023-02-16T14:21:58.540Z"
+  },
+  {
+    "no": 91,
+    "names": {
+      "ko": "파르셀",
+      "en": "Cloyster",
+      "jp": "パルシェン",
+      "cn": "刺甲貝",
+      "fr": "Crustabri"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/91.png",
+    "catched_at": "2023-02-16T14:22:02.800Z"
+  },
+  {
+    "no": 92,
+    "names": {
+      "ko": "고오스",
+      "en": "Gastly",
+      "jp": "ゴース",
+      "cn": "鬼斯",
+      "fr": "Fantominus"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/92.png",
+    "catched_at": "2023-02-16T14:22:07.063Z"
+  },
+  {
+    "no": 93,
+    "names": {
+      "ko": "고우스트",
+      "en": "Haunter",
+      "jp": "ゴースト",
+      "cn": "鬼斯通",
+      "fr": "Spectrum"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/93.png",
+    "catched_at": "2023-02-16T14:22:11.408Z"
+  },
+  {
+    "no": 94,
+    "names": {
+      "ko": "팬텀",
+      "en": "Gengar",
+      "jp": "ゲンガー",
+      "cn": "耿鬼",
+      "fr": "Ectoplasma"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/94.png",
+    "catched_at": "2023-02-16T14:22:15.639Z"
+  },
+  {
+    "no": 95,
+    "names": {
+      "ko": "롱스톤",
+      "en": "Onix",
+      "jp": "イワーク",
+      "cn": "大岩蛇",
+      "fr": "Onix"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/95.png",
+    "catched_at": "2023-02-16T14:22:19.837Z"
+  },
+  {
+    "no": 96,
+    "names": {
+      "ko": "슬리프",
+      "en": "Drowzee",
+      "jp": "スリープ",
+      "cn": "催眠貘",
+      "fr": "Soporifik"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/96.png",
+    "catched_at": "2023-02-16T14:22:24.071Z"
+  },
+  {
+    "no": 97,
+    "names": {
+      "ko": "슬리퍼",
+      "en": "Hypno",
+      "jp": "スリーパー",
+      "cn": "引夢貘人",
+      "fr": "Hypnomade"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/97.png",
+    "catched_at": "2023-02-16T14:22:28.360Z"
+  },
+  {
+    "no": 98,
+    "names": {
+      "ko": "크랩",
+      "en": "Krabby",
+      "jp": "クラブ",
+      "cn": "大鉗蟹",
+      "fr": "Krabby"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/98.png",
+    "catched_at": "2023-02-16T14:22:32.439Z"
+  },
+  {
+    "no": 99,
+    "names": {
+      "ko": "킹크랩",
+      "en": "Kingler",
+      "jp": "キングラー",
+      "cn": "巨鉗蟹",
+      "fr": "Krabboss"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/99.png",
+    "catched_at": "2023-02-16T14:22:36.522Z"
+  },
+  {
+    "no": 100,
+    "names": {
+      "ko": "찌리리공",
+      "en": "Voltorb",
+      "jp": "ビリリダマ",
+      "cn": "霹靂電球",
+      "fr": "Voltorbe"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/100.png",
+    "catched_at": "2023-02-16T14:24:11.616Z"
+  },
+  {
+    "no": 101,
+    "names": {
+      "ko": "붐볼",
+      "en": "Electrode",
+      "jp": "マルマイン",
+      "cn": "頑皮雷彈",
+      "fr": "Électrode"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/101.png",
+    "catched_at": "2023-02-16T14:24:11.667Z"
+  },
+  {
+    "no": 102,
+    "names": {
+      "ko": "아라리",
+      "en": "Exeggcute",
+      "jp": "タマタマ",
+      "cn": "蛋蛋",
+      "fr": "Noeunoeuf"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/102.png",
+    "catched_at": "2023-02-16T14:24:11.676Z"
+  },
+  {
+    "no": 103,
+    "names": {
+      "ko": "나시",
+      "en": "Exeggutor",
+      "jp": "ナッシー",
+      "cn": "椰蛋樹",
+      "fr": "Noadkoko"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/103.png",
+    "catched_at": "2023-02-16T14:24:11.687Z"
+  },
+  {
+    "no": 104,
+    "names": {
+      "ko": "탕구리",
+      "en": "Cubone",
+      "jp": "カラカラ",
+      "cn": "卡拉卡拉",
+      "fr": "Osselait"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/104.png",
+    "catched_at": "2023-02-16T14:24:11.697Z"
+  },
+  {
+    "no": 105,
+    "names": {
+      "ko": "텅구리",
+      "en": "Marowak",
+      "jp": "ガラガラ",
+      "cn": "嘎啦嘎啦",
+      "fr": "Ossatueur"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/105.png",
+    "catched_at": "2023-02-16T14:24:11.714Z"
+  },
+  {
+    "no": 106,
+    "names": {
+      "ko": "시라소몬",
+      "en": "Hitmonlee",
+      "jp": "サワムラー",
+      "cn": "飛腿郎",
+      "fr": "Kicklee"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/106.png",
+    "catched_at": "2023-02-16T14:24:11.728Z"
+  },
+  {
+    "no": 107,
+    "names": {
+      "ko": "홍수몬",
+      "en": "Hitmonchan",
+      "jp": "エビワラー",
+      "cn": "快拳郎",
+      "fr": "Tygnon"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/107.png",
+    "catched_at": "2023-02-16T14:24:11.738Z"
+  },
+  {
+    "no": 108,
+    "names": {
+      "ko": "내루미",
+      "en": "Lickitung",
+      "jp": "ベロリンガ",
+      "cn": "大舌頭",
+      "fr": "Excelangue"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/108.png",
+    "catched_at": "2023-02-16T14:24:11.747Z"
+  },
+  {
+    "no": 109,
+    "names": {
+      "ko": "또가스",
+      "en": "Koffing",
+      "jp": "ドガース",
+      "cn": "瓦斯彈",
+      "fr": "Smogo"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/109.png",
+    "catched_at": "2023-02-16T14:24:11.757Z"
+  },
+  {
+    "no": 110,
+    "names": {
+      "ko": "또도가스",
+      "en": "Weezing",
+      "jp": "マタドガス",
+      "cn": "雙彈瓦斯",
+      "fr": "Smogogo"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/110.png",
+    "catched_at": "2023-02-16T14:24:11.766Z"
+  },
+  {
+    "no": 111,
+    "names": {
+      "ko": "뿔카노",
+      "en": "Rhyhorn",
+      "jp": "サイホーン",
+      "cn": "獨角犀牛",
+      "fr": "Rhinocorne"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/111.png",
+    "catched_at": "2023-02-16T14:24:11.778Z"
+  },
+  {
+    "no": 112,
+    "names": {
+      "ko": "코뿌리",
+      "en": "Rhydon",
+      "jp": "サイドン",
+      "cn": "鑽角犀獸",
+      "fr": "Rhinoféros"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/112.png",
+    "catched_at": "2023-02-16T14:24:11.790Z"
+  },
+  {
+    "no": 113,
+    "names": {
+      "ko": "럭키",
+      "en": "Chansey",
+      "jp": "ラッキー",
+      "cn": "吉利蛋",
+      "fr": "Leveinard"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/113.png",
+    "catched_at": "2023-02-16T14:24:11.799Z"
+  },
+  {
+    "no": 114,
+    "names": {
+      "ko": "덩쿠리",
+      "en": "Tangela",
+      "jp": "モンジャラ",
+      "cn": "蔓藤怪",
+      "fr": "Saquedeneu"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/114.png",
+    "catched_at": "2023-02-16T14:24:11.810Z"
+  },
+  {
+    "no": 115,
+    "names": {
+      "ko": "캥카",
+      "en": "Kangaskhan",
+      "jp": "ガルーラ",
+      "cn": "袋獸",
+      "fr": "Kangourex"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/115.png",
+    "catched_at": "2023-02-16T14:24:11.818Z"
+  },
+  {
+    "no": 116,
+    "names": {
+      "ko": "쏘드라",
+      "en": "Horsea",
+      "jp": "タッツー",
+      "cn": "墨海馬",
+      "fr": "Hypotrempe"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/116.png",
+    "catched_at": "2023-02-16T14:24:11.828Z"
+  },
+  {
+    "no": 117,
+    "names": {
+      "ko": "시드라",
+      "en": "Seadra",
+      "jp": "シードラ",
+      "cn": "海刺龍",
+      "fr": "Hypocéan"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/117.png",
+    "catched_at": "2023-02-16T14:24:11.841Z"
+  },
+  {
+    "no": 118,
+    "names": {
+      "ko": "콘치",
+      "en": "Goldeen",
+      "jp": "トサキント",
+      "cn": "角金魚",
+      "fr": "Poissirène"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/118.png",
+    "catched_at": "2023-02-16T14:24:11.850Z"
+  },
+  {
+    "no": 119,
+    "names": {
+      "ko": "왕콘치",
+      "en": "Seaking",
+      "jp": "アズマオウ",
+      "cn": "金魚王",
+      "fr": "Poissoroy"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/119.png",
+    "catched_at": "2023-02-16T14:24:11.860Z"
+  },
+  {
+    "no": 120,
+    "names": {
+      "ko": "별가사리",
+      "en": "Staryu",
+      "jp": "ヒトデマン",
+      "cn": "海星星",
+      "fr": "Stari"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/120.png",
+    "catched_at": "2023-02-16T14:24:11.868Z"
+  },
+  {
+    "no": 121,
+    "names": {
+      "ko": "아쿠스타",
+      "en": "Starmie",
+      "jp": "スターミー",
+      "cn": "寶石海星",
+      "fr": "Staross"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/121.png",
+    "catched_at": "2023-02-16T14:24:11.877Z"
+  },
+  {
+    "no": 122,
+    "names": {
+      "ko": "마임맨",
+      "en": "Mr. Mime",
+      "jp": "バリヤード",
+      "cn": "魔牆人偶",
+      "fr": "M. Mime"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/122.png",
+    "catched_at": "2023-02-16T14:24:12.886Z"
+  },
+  {
+    "no": 123,
+    "names": {
+      "ko": "스라크",
+      "en": "Scyther",
+      "jp": "ストライク",
+      "cn": "飛天螳螂",
+      "fr": "Insécateur"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/123.png",
+    "catched_at": "2023-02-16T14:24:17.143Z"
+  },
+  {
+    "no": 124,
+    "names": {
+      "ko": "루주라",
+      "en": "Jynx",
+      "jp": "ルージュラ",
+      "cn": "迷唇姐",
+      "fr": "Lippoutou"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/124.png",
+    "catched_at": "2023-02-16T14:24:21.401Z"
+  },
+  {
+    "no": 125,
+    "names": {
+      "ko": "에레브",
+      "en": "Electabuzz",
+      "jp": "エレブー",
+      "cn": "電擊獸",
+      "fr": "Élektek"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/125.png",
+    "catched_at": "2023-02-16T14:24:25.631Z"
+  },
+  {
+    "no": 126,
+    "names": {
+      "ko": "마그마",
+      "en": "Magmar",
+      "jp": "ブーバー",
+      "cn": "鴨嘴火獸",
+      "fr": "Magmar"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/126.png",
+    "catched_at": "2023-02-16T14:24:29.893Z"
+  },
+  {
+    "no": 127,
+    "names": {
+      "ko": "쁘사이저",
+      "en": "Pinsir",
+      "jp": "カイロス",
+      "cn": "凱羅斯",
+      "fr": "Scarabrute"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/127.png",
+    "catched_at": "2023-02-16T14:24:34.242Z"
+  },
+  {
+    "no": 128,
+    "names": {
+      "ko": "켄타로스",
+      "en": "Tauros",
+      "jp": "ケンタロス",
+      "cn": "肯泰羅",
+      "fr": "Tauros"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/128.png",
+    "catched_at": "2023-02-16T14:24:38.472Z"
+  },
+  {
+    "no": 129,
+    "names": {
+      "ko": "잉어킹",
+      "en": "Magikarp",
+      "jp": "コイキング",
+      "cn": "鯉魚王",
+      "fr": "Magicarpe"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/129.png",
+    "catched_at": "2023-02-16T14:24:42.702Z"
+  },
+  {
+    "no": 130,
+    "names": {
+      "ko": "갸라도스",
+      "en": "Gyarados",
+      "jp": "ギャラドス",
+      "cn": "暴鯉龍",
+      "fr": "Léviator"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/130.png",
+    "catched_at": "2023-02-16T14:24:47.018Z"
+  },
+  {
+    "no": 131,
+    "names": {
+      "ko": "라프라스",
+      "en": "Lapras",
+      "jp": "ラプラス",
+      "cn": "拉普拉斯",
+      "fr": "Lokhlass"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/131.png",
+    "catched_at": "2023-02-16T14:24:51.345Z"
+  },
+  {
+    "no": 132,
+    "names": {
+      "ko": "메타몽",
+      "en": "Ditto",
+      "jp": "メタモン",
+      "cn": "百變怪",
+      "fr": "Métamorph"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png",
+    "catched_at": "2023-02-16T14:24:55.612Z"
+  },
+  {
+    "no": 133,
+    "names": {
+      "ko": "이브이",
+      "en": "Eevee",
+      "jp": "イーブイ",
+      "cn": "伊布",
+      "fr": "Évoli"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/133.png",
+    "catched_at": "2023-02-16T14:24:59.832Z"
+  },
+  {
+    "no": 134,
+    "names": {
+      "ko": "샤미드",
+      "en": "Vaporeon",
+      "jp": "シャワーズ",
+      "cn": "水伊布",
+      "fr": "Aquali"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/134.png",
+    "catched_at": "2023-02-16T14:25:04.094Z"
+  },
+  {
+    "no": 135,
+    "names": {
+      "ko": "쥬피썬더",
+      "en": "Jolteon",
+      "jp": "サンダース",
+      "cn": "雷伊布",
+      "fr": "Voltali"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/135.png",
+    "catched_at": "2023-02-16T14:25:08.182Z"
+  },
+  {
+    "no": 136,
+    "names": {
+      "ko": "부스터",
+      "en": "Flareon",
+      "jp": "ブースター",
+      "cn": "火伊布",
+      "fr": "Pyroli"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/136.png",
+    "catched_at": "2023-02-16T14:25:12.436Z"
+  },
+  {
+    "no": 137,
+    "names": {
+      "ko": "폴리곤",
+      "en": "Porygon",
+      "jp": "ポリゴン",
+      "cn": "多邊獸",
+      "fr": "Porygon"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/137.png",
+    "catched_at": "2023-02-16T14:25:16.719Z"
+  },
+  {
+    "no": 138,
+    "names": {
+      "ko": "암나이트",
+      "en": "Omanyte",
+      "jp": "オムナイト",
+      "cn": "菊石獸",
+      "fr": "Amonita"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/138.png",
+    "catched_at": "2023-02-16T14:25:20.958Z"
+  },
+  {
+    "no": 139,
+    "names": {
+      "ko": "암스타",
+      "en": "Omastar",
+      "jp": "オムスター",
+      "cn": "多刺菊石獸",
+      "fr": "Amonistar"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/139.png",
+    "catched_at": "2023-02-16T14:25:25.148Z"
+  },
+  {
+    "no": 140,
+    "names": {
+      "ko": "투구",
+      "en": "Kabuto",
+      "jp": "カブト",
+      "cn": "化石盔",
+      "fr": "Kabuto"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/140.png",
+    "catched_at": "2023-02-16T14:25:29.438Z"
+  },
+  {
+    "no": 141,
+    "names": {
+      "ko": "투구푸스",
+      "en": "Kabutops",
+      "jp": "カブトプス",
+      "cn": "鐮刀盔",
+      "fr": "Kabutops"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/141.png",
+    "catched_at": "2023-02-16T14:25:33.520Z"
+  },
+  {
+    "no": 142,
+    "names": {
+      "ko": "프테라",
+      "en": "Aerodactyl",
+      "jp": "プテラ",
+      "cn": "化石翼龍",
+      "fr": "Ptéra"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/142.png",
+    "catched_at": "2023-02-16T14:25:37.756Z"
+  },
+  {
+    "no": 143,
+    "names": {
+      "ko": "잠만보",
+      "en": "Snorlax",
+      "jp": "カビゴン",
+      "cn": "卡比獸",
+      "fr": "Ronflex"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/143.png",
+    "catched_at": "2023-02-16T14:25:42.013Z"
+  },
+  {
+    "no": 144,
+    "names": {
+      "ko": "프리져",
+      "en": "Articuno",
+      "jp": "フリーザー",
+      "cn": "急凍鳥",
+      "fr": "Artikodin"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/144.png",
+    "catched_at": "2023-02-16T14:25:46.239Z"
+  },
+  {
+    "no": 145,
+    "names": {
+      "ko": "썬더",
+      "en": "Zapdos",
+      "jp": "サンダー",
+      "cn": "閃電鳥",
+      "fr": "Électhor"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/145.png",
+    "catched_at": "2023-02-16T14:25:50.411Z"
+  },
+  {
+    "no": 146,
+    "names": {
+      "ko": "파이어",
+      "en": "Moltres",
+      "jp": "ファイヤー",
+      "cn": "火焰鳥",
+      "fr": "Sulfura"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/146.png",
+    "catched_at": "2023-02-16T14:25:54.804Z"
+  },
+  {
+    "no": 147,
+    "names": {
+      "ko": "미뇽",
+      "en": "Dratini",
+      "jp": "ミニリュウ",
+      "cn": "迷你龍",
+      "fr": "Minidraco"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/147.png",
+    "catched_at": "2023-02-16T14:25:59.080Z"
+  },
+  {
+    "no": 148,
+    "names": {
+      "ko": "신뇽",
+      "en": "Dragonair",
+      "jp": "ハクリュー",
+      "cn": "哈克龍",
+      "fr": "Draco"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/148.png",
+    "catched_at": "2023-02-16T14:26:03.374Z"
+  },
+  {
+    "no": 149,
+    "names": {
+      "ko": "망나뇽",
+      "en": "Dragonite",
+      "jp": "カイリュー",
+      "cn": "快龍",
+      "fr": "Dracolosse"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/149.png",
+    "catched_at": "2023-02-16T14:26:07.578Z"
+  },
+  {
+    "no": 150,
+    "names": {
+      "ko": "뮤츠",
+      "en": "Mewtwo",
+      "jp": "ミュウツー",
+      "cn": "超夢",
+      "fr": "Mewtwo"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/150.png",
+    "catched_at": "2023-02-16T14:26:11.652Z"
+  },
+  {
+    "no": 151,
+    "names": {
+      "ko": "뮤",
+      "en": "Mew",
+      "jp": "ミュウ",
+      "cn": "夢幻",
+      "fr": "Mew"
+    },
+    "imgUrl": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/151.png",
+    "catched_at": "2023-02-16T14:26:15.765Z"
+  }
+]
