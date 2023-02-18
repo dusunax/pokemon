@@ -1,6 +1,5 @@
-/** @type {import('next').NextConfig} */
-
-const nextConfig = {
+// next.config.js
+module.exports = {
   reactStrictMode: true,
   onDemandEntries: {
     maxInactiveAge: 1000 * 60 * 60, // 1 hour
@@ -12,5 +11,3 @@ const nextConfig = {
     domains: ["raw.githubusercontent.com"],
   },
 };
-
-module.exports = nextConfig;
