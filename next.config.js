@@ -1,19 +1,14 @@
 /** @type {import('next').NextConfig} */
 
+const debug = process.env.NODE_ENV !== "production";
+const repository = "toy";
+
 const nextConfig = {
   reactStrictMode: true,
-  onDemandEntries: {
-    maxInactiveAge: 1000 * 60 * 60, // 1 hour
-  },
-  generateBuildId: async () => {
-    return `${Date.now()}`;
-  },
-  images: {
-    domains: ["raw.githubusercontent.com"],
-  },
-  allowedExperimental: {
-    images: true,
-  },
+  assetPrefix: !debug ? `/${repository}/` : "",
+  trailingSlash: true,
 };
 
 module.exports = nextConfig;
+
+// "homepage": "https://dusunax.github.io/toy",

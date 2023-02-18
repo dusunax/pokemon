@@ -1,5 +1,6 @@
 import "tailwindcss/tailwind.css";
 import "@/styles/index.css";
+import { prefix } from "../../config/config";
 
 import React, { useEffect, useState } from "react";
 import type { AppProps } from "next/app";
@@ -11,6 +12,7 @@ import { QueryClientProvider } from "react-query";
 import { queryClient } from "@/react-query/queryClient";
 
 import { saveUserData, updateUserSignInTime } from "@/api/userAPI";
+import { PortfolioProvider } from "@/context/context";
 
 export default function App({ Component, pageProps }: AppProps) {
   const [init, setInit] = useState(false);
@@ -33,14 +35,16 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      <QueryClientProvider client={queryClient}>
-        {init ? (
-          <Component {...pageProps} isLoggedIn={isLoggedIn} />
-        ) : (
-          "초기화 중"
-        )}
-        <ReactQueryDevtools />
-      </QueryClientProvider>
+      <PortfolioProvider value={{ prefix }}>
+        <QueryClientProvider client={queryClient}>
+          {init ? (
+            <Component {...pageProps} isLoggedIn={isLoggedIn} />
+          ) : (
+            "초기화 중"
+          )}
+          <ReactQueryDevtools />
+        </QueryClientProvider>
+      </PortfolioProvider>
     </>
   );
 }

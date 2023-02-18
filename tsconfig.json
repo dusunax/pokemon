@@ -25,7 +25,8 @@
     "**/*.ts",
     "**/*.tsx",
     "src/react-query/constants.js",
-    "src/common/firebaseInstance.js"
+    "src/common/firebaseInstance.js",
+    "src/context/context.js"
   ],
   "exclude": ["node_modules"]
 }
