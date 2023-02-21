@@ -105,9 +105,7 @@ const updateUserDrawTime = async () => {
   }
 };
 
-const getTimeGap = async () => {
-  const oneHour = 60 * 60 * 1000;
-
+const getTimeGap = async (limit: number) => {
   const { userRef } = await getFirestoreRefObject();
   const userData = (await userRef.get()).docs[0].data();
 
@@ -118,7 +116,7 @@ const getTimeGap = async () => {
 
   const now = new Date();
   const elapsed = now.getTime() - lastDrawTime.getTime();
-  const remaining = oneHour - elapsed;
+  const remaining = limit - elapsed;
 
   return remaining;
 };
