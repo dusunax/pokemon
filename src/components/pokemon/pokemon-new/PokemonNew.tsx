@@ -12,7 +12,7 @@ export default function PokemonNew({
   pokemonQuery: UsePoketmonQuery;
 }) {
   const { currPokemon, updateIdNo } = pokemonQuery;
-  const { isOverHour } = useTimer();
+  const { isOverLimit: isOverHour } = useTimer();
 
   const buttonClickHandler = () => {
     updateIdNo();

@@ -13,9 +13,9 @@ function getTimeHHMM(inputTimeString: Date | Timestamp) {
 function formatTimestamp(timestamp: { seconds: number; nanoseconds: number }) {
   const date = new Date(timestamp.seconds * 1000);
   return `${date.toLocaleString("ko-KR", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
+    year: "2-digit",
+    month: "2-digit",
+    day: "2-digit",
   })} ${getTimeHHMM(date)}`;
 }
 

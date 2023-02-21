@@ -6,34 +6,35 @@ import { formatTimeGap, formatTimestamp } from "@/utils/timeFormatter";
 export default function useTimer() {
   const [lastTime, setLastTime] = useState("");
   const [timeGap, setTimeGap] = useState("");
-  const [isOverHour, setIsOverHour] = useState(false);
+  const [isOverLimit, setIsOverLimit] = useState(false);
 
   const oneHour = 60 * 60 * 1000;
-  // const oneHour = 60;
+  const fiveMinite = 5 * 60 * 1000;
+  const limit = fiveMinite;
 
   useEffect(() => {
     async function initUserObject() {
       const { userRef } = await getFirestoreRefObject();
       const userData = (await userRef.get()).docs[0].data();
 
-      const gap = await getTimeGap();
+      const gap = await getTimeGap(limit);
       setTimeGap(formatTimeGap(gap));
       setLastTime(formatTimestamp(userData.lastDrawTime));
-      setIsOverHour(gap <= oneHour);
+      setIsOverLimit(gap >= limit);
     }
 
     initUserObject();
-  }, [oneHour]);
+  }, [limit]);
 
   useEffect(() => {
     const interval = setInterval(async () => {
-      const gap = await getTimeGap();
+      const gap = await getTimeGap(limit);
       setTimeGap(formatTimeGap(gap));
-      setIsOverHour(gap <= oneHour);
+      setIsOverLimit(gap >= limit);
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [oneHour]);
+  }, [limit]);
 
-  return { lastTime, timeGap, isOverHour };
+  return { lastTime, timeGap, isOverLimit, limit };
 }
