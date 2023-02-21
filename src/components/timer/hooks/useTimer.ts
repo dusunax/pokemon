@@ -9,9 +9,10 @@ export default function useTimer() {
   const [isOverLimit, setIsOverLimit] = useState(false);
 
   const oneHour = 60 * 60 * 1000;
-  const fiveMinite = 5 * 60 * 1000;
+  const fiveMinite = 1 * 60 * 1000;
   const limit = fiveMinite;
 
+  // 초기화
   useEffect(() => {
     async function initUserObject() {
       const { userRef } = await getFirestoreRefObject();
@@ -20,17 +21,18 @@ export default function useTimer() {
       const gap = await getTimeGap(limit);
       setTimeGap(formatTimeGap(gap));
       setLastTime(formatTimestamp(userData.lastDrawTime));
-      setIsOverLimit(gap >= limit);
+      setIsOverLimit(gap <= 0);
     }
 
     initUserObject();
   }, [limit]);
 
+  // 초기화
   useEffect(() => {
     const interval = setInterval(async () => {
       const gap = await getTimeGap(limit);
       setTimeGap(formatTimeGap(gap));
-      setIsOverLimit(gap >= limit);
+      setIsOverLimit(gap <= 0);
     }, 1000);
 
     return () => clearInterval(interval);

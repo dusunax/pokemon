@@ -9,7 +9,9 @@ export default function Timer() {
         <div
           className={
             "w-3 h-3 rounded-lg inline-block mx-2" +
-            (isOverLimit ? " bg-green-400" : " bg-rose-600")
+            (isOverLimit
+              ? " bg-green-400 animate-pulse animate-ping"
+              : " bg-rose-600 animate-pulse")
           }
         ></div>
         {lastTime}
