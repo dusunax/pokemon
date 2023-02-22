@@ -3,7 +3,7 @@ import path from "path";
 
 import Head from "next/head";
 
-import PokemonContents from "@/components/pokemon/PokemonContents";
+import PokemonContents from "PokemonContents";
 import { PokemonDTO } from "@/models/pokemon";
 
 function PokemonPage({ pokemonList }: { pokemonList: PokemonDTO[] }) {
@@ -15,7 +15,7 @@ function PokemonPage({ pokemonList }: { pokemonList: PokemonDTO[] }) {
         <meta property="og:title" content="포켓몬" />
         <meta property="og:description" content="포켓몬 페이지입니다." />
       </Head>
-      <main>
+      <main className="bg-white">
         <PokemonContents />
       </main>
     </>

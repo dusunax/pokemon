@@ -24,9 +24,8 @@ export default function PokemonList({
   if (!totalPages) return <></>;
 
   return (
-    <div>
-      <h1 className="mb-4 text-4xl font-bold text-center">PokemonList</h1>
-      <ul className="grid grid-cols-2 xxs:grid-cols-3 xs:grid-cols-5 md:grid-cols-3">
+    <div className=" px-16">
+      <ul className="grid grid-cols-2 xxs:grid-cols-3 xs:grid-cols-5 md:grid-cols-3 gap-2">
         {pokemonList.map((item) => (
           <li key={item.no} className="text-xxs">
             {item.no <= 151 ? (

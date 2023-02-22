@@ -21,18 +21,18 @@ export default function PokemonNew({
 
   return (
     <div className="text-center">
-      <div className="w-36 h-36 mx-auto">
+      <div className="w-36 h-36 mx-auto -m-20">
         <Pokemon pokemon={currPokemon} />
       </div>
 
-      <section>
+      <div>
         <button
           onClick={
             isOverHour
               ? buttonClickHandler
               : () => alert("아직 뽑을 수 없어요:(")
           }
-          className="random-pokemon relative -mt-2 hover:scale-125 transition-all active:scale-50"
+          className="random-pokemon relative pt-1 mt-16 hover:scale-125 transition-all active:scale-50"
         >
           <Image
             className={isOverHour ? "" : "opacity-25"}
@@ -41,7 +41,7 @@ export default function PokemonNew({
             alt="몬스터볼"
           />
         </button>
-      </section>
+      </div>
     </div>
   );
 }
