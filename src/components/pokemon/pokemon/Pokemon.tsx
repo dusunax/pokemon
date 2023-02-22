@@ -9,12 +9,7 @@ export default function Pokemon({
   const { names, imgUrl, no } = pokemon;
 
   return (
-    <div className="new-pokemon px-2 pt-6 my-4 mx-auto bg-white shadow-xl relative">
-      <div className="name px-2 rounded-lg absolute top-2 left-2 text-xxs bg-zinc-500 text-zinc-50">
-        <div className={no > 1 && no <= 151 ? " text-green-300" : ""}>
-          {(no > 0 ? no : "") + " " + names["ko"]}
-        </div>
-      </div>
+    <div className="new-pokemon px-2 pt-6 my-4 rounded-full mx-auto bg-[#dde5e4] shadow-innerCustom relative">
       <Image
         src={imgUrl}
         alt={"뭘까요?"}
@@ -22,6 +17,11 @@ export default function Pokemon({
         height={200}
         className="img w-full object-contain"
       />
+      <div className="name px-2 rounded-lg absolute -top-2 left-1/2 -translate-x-1/2 text-xxs break-keep bg-zinc-500 text-zinc-50">
+        <div className={no > 1 && no <= 151 ? " text-green-300" : ""}>
+          {(no > 0 ? no : "") + " " + names["ko"]}
+        </div>
+      </div>
     </div>
   );
 }
