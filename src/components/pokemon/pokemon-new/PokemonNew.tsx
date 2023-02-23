@@ -4,19 +4,22 @@ import Pokemon from "../pokemon/Pokemon";
 import pokeball from "@public/assets/images/button/pokeball.png";
 import Image from "next/image";
 import { updateUserDrawTime } from "@/api/userAPI";
-import useTimer from "@/components/timer/hooks/useTimer";
+import useTimer, { TimerReturnType } from "@/components/timer/hooks/useTimer";
 
 export default function PokemonNew({
   pokemonQuery,
+  timer,
 }: {
   pokemonQuery: UsePoketmonQuery;
+  timer: TimerReturnType;
 }) {
   const { currPokemon, updateIdNo } = pokemonQuery;
-  const { isOverLimit: isOverHour } = useTimer();
+  const { isOverLimit, setIsOverLimit } = timer;
 
   const buttonClickHandler = () => {
     updateIdNo();
     updateUserDrawTime();
+    setIsOverLimit(false);
   };
 
   return (
@@ -28,14 +31,14 @@ export default function PokemonNew({
       <div>
         <button
           onClick={
-            isOverHour
+            isOverLimit
               ? buttonClickHandler
               : () => alert("아직 뽑을 수 없어요:(")
           }
           className="random-pokemon relative pt-1 mt-16 hover:scale-125 transition-all active:scale-50"
         >
           <Image
-            className={isOverHour ? "" : "opacity-25"}
+            className={isOverLimit ? "" : "opacity-25"}
             width={40}
             src={pokeball}
             alt="몬스터볼"
