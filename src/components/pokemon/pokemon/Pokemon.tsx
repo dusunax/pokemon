@@ -9,7 +9,7 @@ export default function Pokemon({
   const { names, imgUrl, no } = pokemon;
 
   return (
-    <div className="new-pokemon px-2 pt-6 my-4 rounded-full mx-auto bg-[#dde5e4] shadow-innerCustom relative">
+    <div className="new-pokemon px-2 pt-6 my-4 rounded-full mx-auto bg-[#dde5e4] shadow-inner-custom relative">
       <Image
         src={imgUrl}
         alt={"뭘까요?"}
