@@ -22,8 +22,8 @@ function PokemonList({ pokemonQuery }: { pokemonQuery: UsePoketmonQuery }) {
   if (!totalPages) return <></>;
 
   return (
-    <div className="px-10">
-      <ul className="grid grid-cols-2 xxs:grid-cols-3 xs:grid-cols-5 md:grid-cols-3 gap-2">
+    <div className="h-full px-8 pb-3 box-border flex flex-col justify-between">
+      <ul className="grid grid-cols-3 xxs:grid-cols-4 sm:grid-cols-6 md:grid-cols-4 gap-2">
         {pokemonList.map((item) => (
           <li key={item.no} className="px-2 text-xxs bg-[#cae8f4]">
             {item.no <= 151 ? (
