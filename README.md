@@ -47,5 +47,6 @@ react, nextJS, react-query, tailwind, firebase
 - [Firestore & React-query : 리스트 페이지네이션 추가 _ 230215](https://github.com/dusunax/toy/issues/15)
 - [Firebase : timestamp를 사용한 타이머 추가 _ 230215](https://github.com/dusunax/toy/issues/17)
 - [NextJS SeverSideProps 추가, pokemon/[id].tsx에 포켓몬 상세 링크 _ 230216](https://github.com/dusunax/toy/issues/20)
-- [타이머 개선, Vercel 배포 _ 230222](https://github.com/dusunax/toy/issues/23)
-- [Tailwind CSS 작업 진행 _ 230323](https://github.com/dusunax/toy/issues/24)
+- [타이머 개선, Vercel 배포 _ 230221](https://github.com/dusunax/toy/issues/23)
+- [Tailwind CSS 작업 진행 _ 230322](https://github.com/dusunax/toy/issues/24)
+- [Tailwind CSS 작업 & 타이머 개선 _ 220223](https://github.com/dusunax/toy/issues/27)
