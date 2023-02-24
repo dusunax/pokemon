@@ -26,6 +26,9 @@ module.exports = {
       boxShadow: {
         "inner-custom": "inset 2px 10px 10px rgba(0, 0, 0, 0.3)",
       },
+      backgroundImage: {
+        "": "",
+      },
     },
   },
   variants: {
