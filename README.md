@@ -50,3 +50,4 @@ react, nextJS, react-query, tailwind, firebase
 - [타이머 개선, Vercel 배포 _ 230221](https://github.com/dusunax/toy/issues/23)
 - [Tailwind CSS 작업 진행 _ 230322](https://github.com/dusunax/toy/issues/24)
 - [Tailwind CSS 작업 & 타이머 개선 _ 220223](https://github.com/dusunax/toy/issues/27)
+- [Tailwind CSS 작업 약간 _ 230224](https://github.com/dusunax/toy/issues/29)
