@@ -51,3 +51,4 @@ react, nextJS, react-query, tailwind, firebase
 - [Tailwind CSS 작업 진행 _ 230322](https://github.com/dusunax/toy/issues/24)
 - [Tailwind CSS 작업 & 타이머 개선 _ 220223](https://github.com/dusunax/toy/issues/27)
 - [Tailwind CSS 작업 약간 _ 230224](https://github.com/dusunax/toy/issues/29)
+- [로딩 시 스켈레톤 UI 추가 및 tailwind CSS 일부 수정 _ 230313](https://github.com/dusunax/toy/issues/31)
