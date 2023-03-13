@@ -1,5 +1,6 @@
-// next.config.js
-module.exports = {
+/** @type {import('next').NextConfig} */
+
+const nextConfig = {
   reactStrictMode: true,
   onDemandEntries: {
     maxInactiveAge: 1000 * 60 * 60, // 1 hour
@@ -10,4 +11,9 @@ module.exports = {
   images: {
     domains: ["raw.githubusercontent.com"],
   },
+  allowedExperimental: {
+    images: true,
+  },
 };
+
+module.exports = nextConfig;
