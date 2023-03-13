@@ -1,16 +1,15 @@
-import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 import PokemonNew from "../pokemon/pokemon-new/PokemonNew";
 import PokemonList from "../pokemon/pokemon-list/PokemonList";
 import Timer from "./Timer";
 
-import { authService } from "@/common/fbase";
 import usePokemonQuery from "../pokemon/hooks/usePokemonQuery";
 import useTimer from "@/components/timer/hooks/useTimer";
+import SkeletonPokemonList from "../pokemon/skeleton/SkeletonPokemonList";
 
 export default function PokemonContents() {
   const pokemonQuery = usePokemonQuery();
-  const router = useRouter();
   const timer = useTimer();
 
   return (
@@ -21,16 +20,6 @@ export default function PokemonContents() {
 
       <Timer timer={timer} />
       <PokemonList pokemonQuery={pokemonQuery} />
-
-      <div
-        className="block absolute bottom-2"
-        onClick={() => {
-          authService.signOut();
-          router.push("/");
-        }}
-      >
-        로그아웃
-      </div>
     </section>
   );
 }

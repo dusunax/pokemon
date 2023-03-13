@@ -58,7 +58,7 @@ export default function Auth() {
   };
 
   return (
-    <div>
+    <div className="h-full w-full px-12 mt-10 absolute top-0 left-0 bg-white">
       <div className="text-center pb-4 mb-4">
         <h1 className="m-common mb-4 text-4xl font-bold">
           {newAccount ? "회원가입" : "로그인"}

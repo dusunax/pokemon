@@ -107,6 +107,9 @@ const updateUserDrawTime = async () => {
 
 const getTimeGap = async (limit: number) => {
   const { userRef } = await getFirestoreRefObject();
+  if ((await userRef.get()).docs[0] === undefined)
+    return new Error("유저 정보를 가져오지 못했습니다.");
+
   const userData = (await userRef.get()).docs[0].data();
 
   const timestamp = userData.lastDrawTime;
