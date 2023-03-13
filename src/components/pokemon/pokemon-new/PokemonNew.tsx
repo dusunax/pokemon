@@ -25,7 +25,12 @@ export default function PokemonNew({
   return (
     <div className="text-center">
       <div className="w-36 h-36 mx-auto -m-20">
-        <Pokemon pokemon={currPokemon} />
+        <Pokemon
+          pokemon={currPokemon}
+          background={"#ffffff"}
+          hideText={false}
+          textSize={"text-sm"}
+        />
       </div>
 
       <div>

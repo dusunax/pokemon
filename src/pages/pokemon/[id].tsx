@@ -24,20 +24,23 @@ const PokemonDetailPage = ({ pokemonList }: { pokemonList: PokemonDTO[] }) => {
   const matchedPokemon = pokemonList.find((pokemon) => pokemon.no === +id);
   // const matchedPokemon = undefined;
   if (!matchedPokemon) throw new Error("포켓몬이 없음!");
+  const catchedAt = new Date(matchedPokemon.catched_at).toLocaleDateString();
 
   return (
     <>
       <Head>
         <title>포켓몬 상세</title>
       </Head>
-      <div>
+
+      <div className="h-full mt-44 bg-white  text-center">
         {/* id에 맞는 포켓몬을 리스트에서 찾아서 Pokemon에 전달 */}
-        <div className="w-60 mt-10 mx-auto">
+        <div className="w-60 -mt-32 mx-auto">
           <Pokemon pokemon={matchedPokemon} />
         </div>
-        <h3 className="my-4 text-xl text-center font-bold">
+        <h3 className="my-4 text-3xl font-bold">
           {matchedPokemon.names["ko"]}
         </h3>
+        <div>{catchedAt}</div>
         <p className="text-center">
           <Link href={`/pokemon/`}>뒤로 가기</Link>
         </p>

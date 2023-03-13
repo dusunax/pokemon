@@ -19,6 +19,21 @@ import { getId } from "@/utils/getId";
 import { checkStatus200 } from "@/utils/checkStatus200";
 import { idNoDTO, initPokemon } from "@/models/pokemon";
 
+// Hook return 타입
+export interface UsePoketmonQuery {
+  getPokemonQuery: (no: number) => Promise<PokemonDTO>;
+  updateIdNo: () => void;
+  idNo: idNoDTO;
+  currPokemon: PokemonDTO;
+  pokemonList: FBPokemonDTO[];
+  limit: number;
+  page: number;
+  isLoading: boolean;
+  isFetched: boolean;
+  setLimit: Dispatch<SetStateAction<number>>;
+  setPage: Dispatch<SetStateAction<number>>;
+}
+
 /** api에 get요청을 보내고, pokemonDTO 타입에 맞는 값을 리턴합니다. */
 async function getPokemonQuery(no: number): Promise<PokemonDTO> {
   const infoRes = await getPokemonInfo(no);
@@ -54,19 +69,6 @@ const fetchPokemonList = async (
 ): Promise<FBPokemonDTO[]> => {
   return await fetchPokemonDB(limit, page);
 };
-
-// Hook return 타입
-export interface UsePoketmonQuery {
-  getPokemonQuery: (no: number) => Promise<PokemonDTO>;
-  updateIdNo: () => void;
-  idNo: idNoDTO;
-  currPokemon: PokemonDTO;
-  pokemonList: FBPokemonDTO[];
-  limit: number;
-  page: number;
-  setLimit: Dispatch<SetStateAction<number>>;
-  setPage: Dispatch<SetStateAction<number>>;
-}
 
 /****************************************************/
 /** hook 시작 */
@@ -104,7 +106,11 @@ export default function usePoketmonQuery(): UsePoketmonQuery {
   });
 
   /** 페이지네이션 */
-  const { data: pokemonList = [] } = useQuery(
+  const {
+    data: pokemonList = [],
+    isLoading,
+    isFetched,
+  } = useQuery(
     [queryKeys.pokemonList, limit, page],
     async () => {
       const list = await fetchPokemonList(limit, page);
@@ -127,7 +133,7 @@ export default function usePoketmonQuery(): UsePoketmonQuery {
   }, [queryClient, idNo]);
 
   return {
-    getPokemonQuery,
+    getPokemonQuery: getPokemonQuery,
     updateIdNo,
     currPokemon,
     pokemonList,
@@ -136,5 +142,7 @@ export default function usePoketmonQuery(): UsePoketmonQuery {
     setPage,
     page,
     limit,
+    isLoading,
+    isFetched,
   };
 }

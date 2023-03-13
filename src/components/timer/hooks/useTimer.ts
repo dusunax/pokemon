@@ -27,18 +27,22 @@ export default function useTimer(): TimerReturnType {
       const userData = (await userRef.get()).docs[0].data();
 
       const gap = await getTimeGap(limit);
+      if (typeof gap !== "number" || gap >= oneMinite) return;
+
       setFormattedTimeGap(formatTimeGap(gap));
       setLastTime(formatTimestamp(userData.lastDrawTime));
       setIsOverLimit(gap <= 0);
     }
 
     initUserObject();
-  }, [limit]);
+  }, [limit, oneMinite]);
 
   // 타이머 인터벌
   useEffect(() => {
     const interval = setInterval(async () => {
       const gap = await getTimeGap(limit);
+      if (typeof gap !== "number" || gap >= oneMinite) return;
+
       setFormattedTimeGap(formatTimeGap(gap));
       setIsOverLimit(gap <= 0);
     }, 1000);
@@ -48,7 +52,7 @@ export default function useTimer(): TimerReturnType {
     }
 
     return () => clearInterval(interval);
-  }, [limit, isOverLimit]);
+  }, [limit, isOverLimit, oneMinite]);
 
   return {
     lastTime,

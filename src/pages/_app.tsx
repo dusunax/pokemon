@@ -11,6 +11,7 @@ import { QueryClientProvider } from "react-query";
 import { queryClient } from "@/react-query/queryClient";
 
 import { saveUserData, updateUserSignInTime } from "@/api/userAPI";
+import { DefaultLayout } from "@/layouts/DefaultLayout";
 
 export default function App({ Component, pageProps }: AppProps) {
   const [init, setInit] = useState(false);
@@ -34,11 +35,14 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <QueryClientProvider client={queryClient}>
-        {init ? (
-          <Component {...pageProps} isLoggedIn={isLoggedIn} />
-        ) : (
-          "초기화 중"
-        )}
+        <DefaultLayout>
+          {init ? (
+            <Component {...pageProps} isLoggedIn={isLoggedIn} />
+          ) : (
+            "초기화 중"
+          )}
+        </DefaultLayout>
+
         <ReactQueryDevtools />
       </QueryClientProvider>
     </>

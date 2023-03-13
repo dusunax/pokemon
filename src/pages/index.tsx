@@ -2,9 +2,9 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 
 import Auth from "@/components/auth/Auth";
-import Main from "@/components/main/Main";
 
 import { userProps } from "@/models/user";
+import Image from "next/image";
 
 export default function Home({ isLoggedIn, userObj }: Partial<userProps>) {
   const router = useRouter();
@@ -13,7 +13,21 @@ export default function Home({ isLoggedIn, userObj }: Partial<userProps>) {
   return (
     <>
       <Head>
-        <title>홈</title>
+        <title>포켓몬 뽑기</title>
+        <meta name="og:title" content="포켓몬 뽑기" />
+        <meta
+          name="og:description"
+          content="1분 마다 포켓몬을 뽑는 프로젝트입니다."
+        />
+        <meta
+          name="og:image"
+          content="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
+        />
+        <link
+          rel="icon"
+          // href="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
+          href="/assets/icons/favicon.ico"
+        ></link>
       </Head>
       <main>
         {!isLoggedIn ? <Auth /> : <></>}

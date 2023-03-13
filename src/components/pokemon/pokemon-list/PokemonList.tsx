@@ -5,9 +5,10 @@ import Pokemon from "../pokemon/Pokemon";
 
 import { UsePoketmonQuery } from "../hooks/usePokemonQuery";
 import { setPaginationFromUserRef } from "@/api/pokemonAPI";
+import SkeletonPokemonList from "../skeleton/SkeletonPokemonList";
 
 function PokemonList({ pokemonQuery }: { pokemonQuery: UsePoketmonQuery }) {
-  const { pokemonList, setPage, page, limit, setLimit } = pokemonQuery;
+  const { pokemonList, setPage, page, limit, isLoading } = pokemonQuery;
   const [totalPages, setTotalPages] = useState<null | number>();
 
   useEffect(() => {
@@ -23,19 +24,23 @@ function PokemonList({ pokemonQuery }: { pokemonQuery: UsePoketmonQuery }) {
 
   return (
     <div className="h-full px-8 pb-3 box-border flex flex-col justify-between">
-      <ul className="grid grid-cols-3 xxs:grid-cols-4 sm:grid-cols-6 md:grid-cols-4 gap-2">
-        {pokemonList.map((item) => (
-          <li key={item.no} className="px-2 text-xxs bg-[#cae8f4]">
-            {item.no <= 151 ? (
-              <Link href={`/pokemon/${item.no}`}>
+      {isLoading ? (
+        <SkeletonPokemonList gridRowLimit={limit} totalItemCount={18} />
+      ) : (
+        <ul className="grid grid-cols-3 xxs:grid-cols-4 sm:grid-cols-6 md:grid-cols-4 gap-2">
+          {pokemonList.map((item) => (
+            <li key={item.no} className="px-2 text-xxs bg-[#cae8f4]">
+              {item.no <= 151 ? (
+                <Link href={`/pokemon/${item.no}`}>
+                  <Pokemon pokemon={item} />
+                </Link>
+              ) : (
                 <Pokemon pokemon={item} />
-              </Link>
-            ) : (
-              <Pokemon pokemon={item} />
-            )}
-          </li>
-        ))}
-      </ul>
+              )}
+            </li>
+          ))}
+        </ul>
+      )}
 
       <div className="pagination-to-side py-4">
         <button
