@@ -1,8 +1,17 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
-  iamges: {
-    domain: ["raw.githubusercontent.com"],
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "raw.githubusercontent.com",
+        pathname: "/PokeAPI",
+      },
+    ],
+    // domains: ["raw.githubusercontent.com"],
+    // loader: "imgix",
+    // path: "https://raw.githubusercontent.com/",
   },
 };
 
