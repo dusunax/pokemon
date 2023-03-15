@@ -45,7 +45,7 @@ export default function Pokemon({
         className={`img w-full object-contain transition-opacity ${
           imageLoaded ? "opacity-100" : "opacity-0"
         }`}
-        onLoad={imageLoadHandler}
+        onLoadingComplete={imageLoadHandler}
       />
       {!imageLoaded && (
         <div className="w-full h-0 pb-[100%] absolute-center ">
