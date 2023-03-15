@@ -38,10 +38,10 @@ export default function Pokemon({
       className={`new-pokemon px-2 pt-4 my-2 rounded-full mx-auto ${backgroundColor} grad shadow-inner-custom relative ${border}`}
     >
       {/* 포켓몬 이미지 */}
-      <Image
+      {/* <Image
         loader={() => imgUrl}
         src={imgUrl}
-        alt={"뭘까요?"}
+        alt={names.ko}
         width={40}
         height={40}
         className={`img w-full object-contain transition-opacity ${
@@ -49,7 +49,18 @@ export default function Pokemon({
         }`}
         unoptimized={true}
         onLoadingComplete={imageLoadHandler}
+      /> */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={imgUrl}
+        alt={names.ko}
+        loading="lazy"
+        onLoad={imageLoadHandler}
+        className={`img w-full object-contain transition-opacity ${
+          imageLoaded ? "opacity-100" : "opacity-0"
+        }`}
       />
+
       {!imageLoaded && (
         <div className="w-full h-0 pb-[100%] absolute-center ">
           {/* 스켈레톤 UI 크기 */}
