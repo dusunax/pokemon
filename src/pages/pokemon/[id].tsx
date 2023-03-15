@@ -4,11 +4,13 @@ import Link from "next/link";
 import fs from "fs";
 import path from "path";
 
-import { GetServerSideProps, NextPage } from "next";
+import { GetServerSideProps } from "next";
 import { useRouter } from "next/router";
 
 import Pokemon from "@/components/pokemon/pokemon/Pokemon";
 import { PokemonDTO } from "@/models/pokemon";
+
+import Button from "@/components/common/Button";
 
 interface ServerSidePropsType {
   pokemonList: PokemonDTO[];
@@ -32,18 +34,22 @@ const PokemonDetailPage = ({ pokemonList }: { pokemonList: PokemonDTO[] }) => {
         <title>포켓몬 상세</title>
       </Head>
 
-      <div className="h-full mt-44 bg-white  text-center">
+      <div className="h-full mt-44 bg-white text-center">
         {/* id에 맞는 포켓몬을 리스트에서 찾아서 Pokemon에 전달 */}
         <div className="w-60 -mt-32 mx-auto">
-          <Pokemon pokemon={matchedPokemon} hideText={false} />
+          <Pokemon
+            pokemon={matchedPokemon}
+            hideText={false}
+            textSize={"text-sm"}
+          />
         </div>
         <h3 className="my-4 text-3xl font-bold">
           {matchedPokemon.names["ko"]}
         </h3>
         <div>{catchedAt}</div>
-        <p className="text-center">
+        <Button className="py-2 px-4 mt-10 rounded-3xl bg-zinc-600 text-white text-sm text-center hover:opacity-90">
           <Link href={`/pokemon/`}>뒤로 가기</Link>
-        </p>
+        </Button>
       </div>
     </>
   );

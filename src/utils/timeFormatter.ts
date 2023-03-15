@@ -20,6 +20,8 @@ function formatTimestamp(timestamp: { seconds: number; nanoseconds: number }) {
 }
 
 function formatTimeGap(timeGap: number) {
+  if (timeGap < 0) return "";
+
   const hours = Math.floor(timeGap / (60 * 60 * 1000))
     .toString()
     .padStart(2, "0");

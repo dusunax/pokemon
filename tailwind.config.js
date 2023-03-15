@@ -8,6 +8,9 @@ module.exports = {
         "light-blue": "#ebf8f9",
         "light-pale-blue": "ebf3f3",
       },
+      backgroundColor: {
+        "light-pale-blue": "ebf3f3",
+      },
       maxHeight: {
         common: "50rem",
       },

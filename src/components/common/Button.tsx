@@ -1,7 +1,7 @@
 interface DefaultButtonProps {
   className: string;
   children: React.ReactNode;
-  theme: string;
+  theme: { [key: string]: string };
   isDisabled: boolean;
   onClick: () => void;
 }
@@ -11,13 +11,16 @@ export default function Button({
   children,
   isDisabled,
   onClick,
+  theme = {},
 }: Partial<DefaultButtonProps>) {
-  const currentTheme = {};
+  const currentTheme = theme;
 
   return (
     <>
       {isDisabled ? (
-        <button disabled>{children}</button>
+        <button className={className} disabled>
+          {children}
+        </button>
       ) : (
         <button className={className} onClick={onClick} {...currentTheme}>
           {children}

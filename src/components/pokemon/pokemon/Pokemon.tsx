@@ -14,7 +14,7 @@ interface Pokemon {
 
 export default function Pokemon({
   pokemon,
-  background = "bg-light-pale-blue",
+  background = "base",
   hideText = true,
   textSize = "text-xxs",
 }: Pokemon) {
@@ -22,8 +22,7 @@ export default function Pokemon({
   const isCachedRange = no > 0 && no <= 151;
 
   // 스타일 props 적용
-  const backgroundColor =
-    background === "#ffffff" ? "bg-white" : `${background}`;
+  const backgroundColor = background === "white" ? "bg-white" : `bg-slate-200`;
   const textOpacity = hideText ? "opacity-0" : "";
   const textColor = isCachedRange ? "text-green-300" : "text-zinc-50";
   const border = isCachedRange ? "border-2 border-red" : "";
@@ -50,16 +49,18 @@ export default function Pokemon({
         unoptimized={true}
         onLoadingComplete={imageLoadHandler}
       /> */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={imgUrl}
-        alt={names.ko}
-        loading="lazy"
-        onLoad={imageLoadHandler}
-        className={`img w-full object-contain transition-opacity ${
-          imageLoaded ? "opacity-100" : "opacity-0"
-        }`}
-      />
+      <div className="w-full pb-[100%] relative">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={imgUrl}
+          alt={names.ko}
+          loading="lazy"
+          onLoad={imageLoadHandler}
+          className={`img absolute top-0 left-0 w-full h-full object-contain transition-opacity ${
+            imageLoaded ? "opacity-100" : "opacity-0"
+          }`}
+        />
+      </div>
 
       {!imageLoaded && (
         <div className="w-full h-0 pb-[100%] absolute-center ">

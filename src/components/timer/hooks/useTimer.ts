@@ -27,11 +27,11 @@ export default function useTimer(): TimerReturnType {
       const userData = (await userRef.get()).docs[0].data();
 
       const gap = await getTimeGap(limit);
-      if (typeof gap !== "number" || gap >= oneMinite) return;
+      if (typeof gap !== "number" || gap >= oneMinite || gap === 0) return;
 
       setFormattedTimeGap(formatTimeGap(gap));
       setLastTime(formatTimestamp(userData.lastDrawTime));
-      setIsOverLimit(gap <= 0);
+      setIsOverLimit(gap < 0);
     }
 
     initUserObject();
@@ -41,10 +41,10 @@ export default function useTimer(): TimerReturnType {
   useEffect(() => {
     const interval = setInterval(async () => {
       const gap = await getTimeGap(limit);
-      if (typeof gap !== "number" || gap >= oneMinite) return;
+      if (typeof gap !== "number" || gap >= oneMinite || isOverLimit) return;
 
       setFormattedTimeGap(formatTimeGap(gap));
-      setIsOverLimit(gap <= 0);
+      setIsOverLimit(gap < 0);
     }, 1000);
 
     if (isOverLimit) {
