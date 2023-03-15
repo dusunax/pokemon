@@ -27,7 +27,7 @@ export default function PokemonNew({
       <div className="w-36 h-36 mx-auto -m-20">
         <Pokemon
           pokemon={currPokemon}
-          background={"#ffffff"}
+          background={"white"}
           hideText={false}
           textSize={"text-sm"}
         />

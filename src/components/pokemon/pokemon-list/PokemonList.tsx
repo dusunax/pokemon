@@ -8,7 +8,8 @@ import { setPaginationFromUserRef } from "@/api/pokemonAPI";
 import SkeletonPokemonList from "../skeleton/SkeletonPokemonList";
 
 function PokemonList({ pokemonQuery }: { pokemonQuery: UsePoketmonQuery }) {
-  const { pokemonList, setPage, page, limit, isLoading } = pokemonQuery;
+  const { pokemonList, setPage, page, limit, isLoading, isFetched } =
+    pokemonQuery;
   const [totalPages, setTotalPages] = useState<null | number>();
 
   useEffect(() => {
@@ -28,8 +29,11 @@ function PokemonList({ pokemonQuery }: { pokemonQuery: UsePoketmonQuery }) {
         <SkeletonPokemonList gridRowLimit={limit} totalItemCount={18} />
       ) : (
         <ul className="grid grid-cols-3 xxs:grid-cols-4 sm:grid-cols-6 md:grid-cols-4 gap-2">
-          {pokemonList.map((item) => (
-            <li key={item.no} className="px-2 text-xxs bg-[#cae8f4]">
+          {pokemonList.map((item, idx) => (
+            <li
+              key={"" + item.no + idx}
+              className="px-2 text-xxs bg-[#cae8f4] rounded-md"
+            >
               {item.no <= 151 ? (
                 <Link href={`/pokemon/${item.no}`}>
                   <Pokemon pokemon={item} />
@@ -51,16 +55,18 @@ function PokemonList({ pokemonQuery }: { pokemonQuery: UsePoketmonQuery }) {
         >
           ●
         </button>
-        <button
-          className={
-            "text-red mx-1" + (page === totalPages - 1 ? " opacity-40" : "")
-          }
-          onClick={() => {
-            page < totalPages - 1 && setPage(page + 1);
-          }}
-        >
-          ●
-        </button>
+        {totalPages > 0 && (
+          <button
+            className={
+              "text-red mx-1" + (page === totalPages - 1 ? " opacity-40" : "")
+            }
+            onClick={() => {
+              page < totalPages - 1 && setPage(page + 1);
+            }}
+          >
+            ●
+          </button>
+        )}
       </div>
     </div>
   );
