@@ -47,6 +47,7 @@ export default function Pokemon({
         className={`img w-full object-contain transition-opacity ${
           imageLoaded ? "opacity-100" : "opacity-0"
         }`}
+        unoptimized={true}
         onLoadingComplete={imageLoadHandler}
       />
       {!imageLoaded && (
