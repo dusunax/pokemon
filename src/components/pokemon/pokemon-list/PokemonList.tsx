@@ -29,7 +29,7 @@ function PokemonList({ pokemonQuery }: { pokemonQuery: UsePoketmonQuery }) {
       ) : (
         <ul className="grid grid-cols-3 xxs:grid-cols-4 sm:grid-cols-6 md:grid-cols-4 gap-2">
           {pokemonList.map((item) => (
-            <li key={item.no} className="px-2 text-xxs bg-[#cae8f4]">
+            <li key={item.no} className="px-2 text-xxs bg-[#cae8f4] rounded-sm">
               {item.no <= 151 ? (
                 <Link href={`/pokemon/${item.no}`}>
                   <Pokemon pokemon={item} />
