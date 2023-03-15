@@ -3,8 +3,6 @@
 const nextConfig = {
   images: {
     domains: ["raw.githubusercontent.com"],
-    loader: "imgix",
-    path: "https://raw.githubusercontent.com/",
     // remotePatterns: [
     //   {
     //     protocol: "https",
