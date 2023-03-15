@@ -33,17 +33,13 @@ export default function Pokemon({
     setImageLoaded(true);
   };
 
-  const loader = (src: string) => {
-    return `${src}?w=40&q=100`;
-  };
-
   return (
     <div
       className={`new-pokemon px-2 pt-4 my-2 rounded-full mx-auto ${backgroundColor} grad shadow-inner-custom relative ${border}`}
     >
       {/* 포켓몬 이미지 */}
       <Image
-        loader={() => loader(imgUrl)}
+        loader={() => imgUrl}
         src={imgUrl}
         alt={"뭘까요?"}
         width={40}
