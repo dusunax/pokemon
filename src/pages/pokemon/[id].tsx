@@ -35,7 +35,7 @@ const PokemonDetailPage = ({ pokemonList }: { pokemonList: PokemonDTO[] }) => {
       <div className="h-full mt-44 bg-white  text-center">
         {/* id에 맞는 포켓몬을 리스트에서 찾아서 Pokemon에 전달 */}
         <div className="w-60 -mt-32 mx-auto">
-          <Pokemon pokemon={matchedPokemon} />
+          <Pokemon pokemon={matchedPokemon} hideText={false} />
         </div>
         <h3 className="my-4 text-3xl font-bold">
           {matchedPokemon.names["ko"]}

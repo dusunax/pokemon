@@ -23,11 +23,7 @@ export default function Home({ isLoggedIn, userObj }: Partial<userProps>) {
           name="og:image"
           content="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
         />
-        <link
-          rel="icon"
-          // href="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
-          href="/assets/icons/favicon.ico"
-        ></link>
+        <link rel="icon" href="/assets/icons/favicon.ico"></link>
       </Head>
       <main>
         {!isLoggedIn ? <Auth /> : <></>}

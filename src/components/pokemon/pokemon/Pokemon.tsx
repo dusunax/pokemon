@@ -14,7 +14,7 @@ interface Pokemon {
 
 export default function Pokemon({
   pokemon,
-  background = "#ebf3f3",
+  background = "bg-light-pale-blue",
   hideText = true,
   textSize = "text-xxs",
 }: Pokemon) {
@@ -22,7 +22,8 @@ export default function Pokemon({
   const isCachedRange = no > 0 && no <= 151;
 
   // 스타일 props 적용
-  const backgroundColor = `bg-[${background}]`;
+  const backgroundColor =
+    background === "#ffffff" ? "bg-white" : `${background}`;
   const textOpacity = hideText ? "opacity-0" : "";
   const textColor = isCachedRange ? "text-green-300" : "text-zinc-50";
   const border = isCachedRange ? "border-2 border-red" : "";
@@ -32,16 +33,21 @@ export default function Pokemon({
     setImageLoaded(true);
   };
 
+  const loader = (src: string) => {
+    return `${src}?w=40&q=100`;
+  };
+
   return (
     <div
       className={`new-pokemon px-2 pt-4 my-2 rounded-full mx-auto ${backgroundColor} grad shadow-inner-custom relative ${border}`}
     >
       {/* 포켓몬 이미지 */}
       <Image
+        loader={() => loader(imgUrl)}
         src={imgUrl}
         alt={"뭘까요?"}
-        width={50}
-        height={50}
+        width={40}
+        height={40}
         className={`img w-full object-contain transition-opacity ${
           imageLoaded ? "opacity-100" : "opacity-0"
         }`}
