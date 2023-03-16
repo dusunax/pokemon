@@ -6,18 +6,17 @@ import Pokemon from "../pokemon/Pokemon";
 import { UsePoketmonQuery } from "../hooks/usePokemonQuery";
 import { setPaginationFromUserRef } from "@/api/pokemonAPI";
 import SkeletonPokemonList from "../skeleton/SkeletonPokemonList";
+import { useAsync } from "react-use";
 
 function PokemonList({ pokemonQuery }: { pokemonQuery: UsePoketmonQuery }) {
   const { pokemonList, setPage, page, limit, isLoading, isFetched } =
     pokemonQuery;
   const [totalPages, setTotalPages] = useState<null | number>();
 
-  useEffect(() => {
-    const setTotalPage = async () => {
-      const { totalPages } = await setPaginationFromUserRef(limit);
-      setTotalPages(totalPages);
-    };
-    setTotalPage();
+  // useEffect -> useAsync
+  useAsync(async () => {
+    const { totalPages } = await setPaginationFromUserRef(limit);
+    setTotalPages(totalPages);
   }, [limit]);
 
   if (pokemonList.length === 0) return <></>;

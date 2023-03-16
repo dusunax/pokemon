@@ -2,6 +2,7 @@ import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
 import { getFirestoreRefObject, getTimeGap } from "@/api/userAPI";
 import { formatTimeGap, formatTimestamp } from "@/utils/timeFormatter";
+import { useAsync } from "react-use";
 
 export interface TimerReturnType {
   lastTime: string;
@@ -21,23 +22,21 @@ export default function useTimer(): TimerReturnType {
   const limit = oneMinite;
 
   // 컴포넌트 amount => 타이머 초기화
-  useEffect(() => {
-    async function initUserObject() {
-      const { userRef } = await getFirestoreRefObject();
-      const userData = (await userRef.get()).docs[0].data();
+  // useEffect -> useAsync
+  useAsync(async () => {
+    const { userRef } = await getFirestoreRefObject();
+    const userData = (await userRef.get()).docs[0].data();
 
-      const gap = await getTimeGap(limit);
-      if (typeof gap !== "number" || gap >= oneMinite || gap === 0) return;
+    const gap = await getTimeGap(limit);
+    if (typeof gap !== "number" || gap >= oneMinite || gap === 0) return;
 
-      setFormattedTimeGap(formatTimeGap(gap));
-      setLastTime(formatTimestamp(userData.lastDrawTime));
-      setIsOverLimit(gap < 0);
-    }
-
-    initUserObject();
+    setFormattedTimeGap(formatTimeGap(gap));
+    setLastTime(formatTimestamp(userData.lastDrawTime));
+    setIsOverLimit(gap < 0);
   }, [limit, oneMinite]);
 
   // 타이머 인터벌
+  // useEffect -> useAsync
   useEffect(() => {
     const interval = setInterval(async () => {
       const gap = await getTimeGap(limit);
