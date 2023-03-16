@@ -36,14 +36,20 @@ export default function useTimer(): TimerReturnType {
   }, [limit, oneMinite]);
 
   // 타이머 인터벌
-  // useEffect -> useAsync
   useEffect(() => {
     const interval = setInterval(async () => {
       const gap = await getTimeGap(limit);
       if (typeof gap !== "number" || gap >= oneMinite || isOverLimit) return;
 
       setFormattedTimeGap(formatTimeGap(gap));
-      setIsOverLimit(gap < 0);
+
+      //! 이부분에서 isOverLimit가 false -> false로 set될때 useEffect가 recall될 것으로 예상됩니다.
+      // setIsOverLimit(gap < 0);
+
+      //! 아래 로직으로 수정해서 isOverLimit과 gap < 0의 값이 다를때만 갱신
+      if (gap < 0 !== isOverLimit) {
+        setIsOverLimit(gap < 0);
+      }
     }, 1000);
 
     if (isOverLimit) {
