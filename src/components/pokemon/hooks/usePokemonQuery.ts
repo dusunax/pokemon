@@ -1,4 +1,5 @@
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { useAsync } from "react-use";
 import { useQuery, useQueryClient } from "react-query";
 
 import { FBPokemonDTO, PokemonDTO } from "@/models/pokemon";
@@ -125,9 +126,9 @@ export default function usePoketmonQuery(): UsePoketmonQuery {
     }
   );
 
-  // useEffect
-  useEffect(() => {
-    queryClient.prefetchQuery([queryKeys.pokemon, idNo.next], () => {
+  // useEffect -> useAsync
+  useAsync(async () => {
+    await queryClient.prefetchQuery([queryKeys.pokemon, idNo.next], () => {
       idNo.curr > 0 && getPokemonQuery(idNo.next);
     });
   }, [queryClient, idNo]);
