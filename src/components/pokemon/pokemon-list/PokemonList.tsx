@@ -4,7 +4,7 @@ import Link from "next/link";
 import Pokemon from "../pokemon/Pokemon";
 
 import { UsePoketmonQuery } from "../hooks/usePokemonQuery";
-import { setPaginationFromUserRef } from "@/api/pokemonAPI";
+import { setPaginationFromUserRef } from "@/services/pokemonAPI";
 import SkeletonPokemonList from "../skeleton/SkeletonPokemonList";
 
 function PokemonList({ pokemonQuery }: { pokemonQuery: UsePoketmonQuery }) {

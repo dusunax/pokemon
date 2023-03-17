@@ -10,7 +10,7 @@ import { ReactQueryDevtools } from "react-query/devtools";
 import { QueryClientProvider } from "react-query";
 import { queryClient } from "@/react-query/queryClient";
 
-import { saveUserData, updateUserSignInTime } from "@/api/userAPI";
+import { saveUserData, updateUserSignInTime } from "@/services/userAPI";
 import { DefaultLayout } from "@/layouts/DefaultLayout";
 
 export default function App({ Component, pageProps }: AppProps) {

@@ -1,6 +1,5 @@
 import { dbService } from "@/common/fbase";
 import { GetUserRef, userObjDTO } from "@/models/user";
-import { differenceInMilliseconds } from "date-fns";
 
 /** 유저Ref 관련 object를 리턴합니다. */
 export async function getFirestoreRefObject(): Promise<GetUserRef> {
@@ -51,7 +50,6 @@ const updateUserSignInTime = async (user: userObjDTO) => {
   if (!user) {
     throw new Error("사용자 정보가 없습니다.");
   }
-
   try {
     const { uid, metadata } = user;
     const { collection } = await getFirestoreRefObject();
@@ -82,7 +80,6 @@ const updateUserSignInTime = async (user: userObjDTO) => {
 const updateUserDrawTime = async () => {
   try {
     const { uid, collection } = await getFirestoreRefObject();
-
     const userRef = collection.where("userId", "==", uid);
 
     const snapshot = await userRef.get();
@@ -105,23 +102,4 @@ const updateUserDrawTime = async () => {
   }
 };
 
-const getTimeGap = async (limit: number) => {
-  const { userRef } = await getFirestoreRefObject();
-  if ((await userRef.get()).docs[0] === undefined)
-    return new Error("유저 정보를 가져오지 못했습니다.");
-
-  const userData = (await userRef.get()).docs[0].data();
-
-  const timestamp = userData.lastDrawTime;
-  const lastDrawTime = new Date(
-    timestamp.seconds * 1000 + timestamp.nanoseconds / 1000000
-  );
-
-  const now = new Date();
-  const elapsed = now.getTime() - lastDrawTime.getTime();
-  const remaining = limit - elapsed;
-
-  return remaining;
-};
-
-export { saveUserData, updateUserSignInTime, updateUserDrawTime, getTimeGap };
+export { saveUserData, updateUserSignInTime, updateUserDrawTime };

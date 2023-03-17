@@ -3,7 +3,7 @@ import Pokemon from "../pokemon/Pokemon";
 
 import pokeball from "@public/assets/images/button/pokeball.png";
 import Image from "next/image";
-import { updateUserDrawTime } from "@/api/userAPI";
+import { updateUserDrawTime } from "@/services/userAPI";
 import useTimer, { TimerReturnType } from "@/components/timer/hooks/useTimer";
 
 export default function PokemonNew({

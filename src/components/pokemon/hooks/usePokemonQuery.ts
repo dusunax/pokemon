@@ -13,7 +13,7 @@ import {
   getPokemonImage,
   getPokemonInfo,
   savePokemonToDB,
-} from "@/api/pokemonAPI";
+} from "@/services/pokemonAPI";
 
 import { getId } from "@/utils/getId";
 import { checkStatus200 } from "@/utils/checkStatus200";

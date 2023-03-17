@@ -1,6 +1,6 @@
 import { Timestamp } from "firebase/firestore";
 
-function getTimeHHMM(inputTimeString: Date | Timestamp) {
+function formatTimeStringWithColon(inputTimeString: Date | Timestamp) {
   const dateObj =
     inputTimeString instanceof Timestamp
       ? inputTimeString.toDate()
@@ -10,16 +10,19 @@ function getTimeHHMM(inputTimeString: Date | Timestamp) {
   return `${hours}:${minutes}`;
 }
 
-function formatTimestamp(timestamp: { seconds: number; nanoseconds: number }) {
+function formatTimestampWithColon(timestamp: {
+  seconds: number;
+  nanoseconds: number;
+}) {
   const date = new Date(timestamp.seconds * 1000);
   return `${date.toLocaleString("ko-KR", {
     year: "2-digit",
     month: "2-digit",
     day: "2-digit",
-  })} ${getTimeHHMM(date)}`;
+  })} ${formatTimeStringWithColon(date)}`;
 }
 
-function formatTimeGap(timeGap: number) {
+function formatTimeGapToLocalString(timeGap: number): string {
   if (timeGap < 0) return "";
 
   const hours = Math.floor(timeGap / (60 * 60 * 1000))
@@ -34,4 +37,8 @@ function formatTimeGap(timeGap: number) {
   return `${hours}시간 ${minutes}분 ${seconds}초`;
 }
 
-export { getTimeHHMM, formatTimestamp, formatTimeGap };
+export {
+  formatTimeStringWithColon,
+  formatTimestampWithColon,
+  formatTimeGapToLocalString,
+};
