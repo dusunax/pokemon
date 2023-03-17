@@ -14,6 +14,7 @@ export default function Auth() {
     if (name === "password") setPassword(value);
     if (name === "email") setEmail(value);
   };
+
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {

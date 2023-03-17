@@ -1,3 +1,5 @@
+import firebase from "firebase/compat/app";
+
 import { axiosInstance } from "./client";
 import { apiBaseDataUrl, apiBaseImgUrl } from "./constants";
 
@@ -21,17 +23,18 @@ export const getPokemonImage = (idNo: number) => {
 
 /** 새 포켓몬을 저장합니다. */
 export const savePokemonToDB = async (payload: PokemonDTO | undefined) => {
-  const { user, uid } = await getFirestoreRefObject();
+  const { user, uid, userRef } = await getFirestoreRefObject();
   if (!payload || !uid) return;
 
-  addPokemonToList(payload);
+  addPokemonToList(userRef, payload);
   user.ref.update({ totalPokemonNumber: user.data().totalPokemonNumber + 1 });
 };
 
 /** 새 포켓몬을 추가합니다. */
-const addPokemonToList = async (pokemon: PokemonDTO) => {
-  const { userRef } = await getFirestoreRefObject();
-
+const addPokemonToList = async (
+  userRef: firebase.firestore.Query<firebase.firestore.DocumentData>,
+  pokemon: PokemonDTO
+) => {
   try {
     const user = (await userRef.get()).docs[0];
 
